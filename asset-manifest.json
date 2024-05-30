@@ -1,12 +1,20 @@
 {
   "files": {
-    "main.css": "/restaurant-app/static/css/main.f7485d64.css",
-    "main.js": "/restaurant-app/static/js/main.d81e0b09.js",
+    "main.css": "/restaurant-app/static/css/main.188ba4e2.css",
+    "main.js": "/restaurant-app/static/js/main.5b018515.js",
     "static/media/category-5.WebP": "/restaurant-app/static/media/category-5.a5a90684eefe32512dde.WebP",
     "static/media/feedback.WebP": "/restaurant-app/static/media/feedback.bd376c05797bd1bc51a9.WebP",
+    "static/media/chef_8.WebP": "/restaurant-app/static/media/chef_8.caacd42d11e657107503.WebP",
     "static/media/static-img.WebP": "/restaurant-app/static/media/static-img.3ba96647c89392868740.WebP",
+    "static/media/chef_7.WebP": "/restaurant-app/static/media/chef_7.09496b39823b9a3216f2.WebP",
+    "static/media/chef_5.WebP": "/restaurant-app/static/media/chef_5.91389248189633177fb4.WebP",
     "static/media/about.WebP": "/restaurant-app/static/media/about.aed4e452f4fd311e9ad5.WebP",
+    "static/media/chef_6.WebP": "/restaurant-app/static/media/chef_6.6f2f9b74de37b9cb6a15.WebP",
+    "static/media/chef-3.WebP": "/restaurant-app/static/media/chef-3.bf4888eef4f20f0686d3.WebP",
+    "static/media/chef-1.WebP": "/restaurant-app/static/media/chef-1.cc74668569d1e812e6ca.WebP",
+    "static/media/chef-2.WebP": "/restaurant-app/static/media/chef-2.4632a44da647a8612cc8.WebP",
     "static/media/deliver-quality.WebP": "/restaurant-app/static/media/deliver-quality.37bf9f85fb5ac2f56b43.WebP",
+    "static/media/chef-4.WebP": "/restaurant-app/static/media/chef-4.b58470d1e1fd01c0206b.WebP",
     "static/media/gallery-4.WebP": "/restaurant-app/static/media/gallery-4.257eaeaa5ae88968cdaa.WebP",
     "static/media/award-chef.WebP": "/restaurant-app/static/media/award-chef.d0706efd34e20f9d58ab.WebP",
     "static/media/gallery-3.WebP": "/restaurant-app/static/media/gallery-3.b4f889390d0cb8061c54.WebP",
@@ -84,11 +92,11 @@
     "static/media/hot-pepper.WebP": "/restaurant-app/static/media/hot-pepper.bc793ae9433ef6982c6b.WebP",
     "static/media/logo.WebP": "/restaurant-app/static/media/logo.bbdaaa34654aff804cc3.WebP",
     "index.html": "/restaurant-app/index.html",
-    "main.f7485d64.css.map": "/restaurant-app/static/css/main.f7485d64.css.map",
-    "main.d81e0b09.js.map": "/restaurant-app/static/js/main.d81e0b09.js.map"
+    "main.188ba4e2.css.map": "/restaurant-app/static/css/main.188ba4e2.css.map",
+    "main.5b018515.js.map": "/restaurant-app/static/js/main.5b018515.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7485d64.css",
-    "static/js/main.d81e0b09.js"
+    "static/css/main.188ba4e2.css",
+    "static/js/main.5b018515.js"
   ]
 }
