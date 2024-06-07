@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/restaurant-app/static/css/main.1696a312.css",
-    "main.js": "/restaurant-app/static/js/main.d5ede681.js",
+    "main.css": "/restaurant-app/static/css/main.dcfd391f.css",
+    "main.js": "/restaurant-app/static/js/main.920c5318.js",
     "static/media/info-5.WebP": "/restaurant-app/static/media/info-5.d7e3b8b79769ea2ed032.WebP",
     "static/media/info-11.WebP": "/restaurant-app/static/media/info-11.ebc2979fb5186767ba54.WebP",
     "static/media/info-9.WebP": "/restaurant-app/static/media/info-9.0958833a2532a59d4737.WebP",
@@ -133,14 +133,15 @@
     "static/media/drinks-1.WebP": "/restaurant-app/static/media/drinks-1.e90fa100a793e4cb30bc.WebP",
     "static/media/popular-product-13.WebP": "/restaurant-app/static/media/popular-product-13.e90fa100a793e4cb30bc.WebP",
     "static/media/hot-pepper.WebP": "/restaurant-app/static/media/hot-pepper.bc793ae9433ef6982c6b.WebP",
+    "static/media/439771693_789249223132590__n.jpg": "/restaurant-app/static/media/439771693_789249223132590_394557324656325282_n.64ebc00b9d20b3c6c86f.jpg",
     "static/media/logo.WebP": "/restaurant-app/static/media/logo.bbdaaa34654aff804cc3.WebP",
     "static/media/user-12.WebP": "/restaurant-app/static/media/user-12.d42d68a9522c4dbd2999.WebP",
     "index.html": "/restaurant-app/index.html",
-    "main.1696a312.css.map": "/restaurant-app/static/css/main.1696a312.css.map",
-    "main.d5ede681.js.map": "/restaurant-app/static/js/main.d5ede681.js.map"
+    "main.dcfd391f.css.map": "/restaurant-app/static/css/main.dcfd391f.css.map",
+    "main.920c5318.js.map": "/restaurant-app/static/js/main.920c5318.js.map"
   },
   "entrypoints": [
-    "static/css/main.1696a312.css",
-    "static/js/main.d5ede681.js"
+    "static/css/main.dcfd391f.css",
+    "static/js/main.920c5318.js"
   ]
 }
