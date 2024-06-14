@@ -1,0 +1,93 @@
+.menu-management-container {
+  padding: 60px 10px;
+  margin: 70px 5px;
+}
+.menu-management-container table {
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.menu-management-container table thead tr th {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.menu-management-container table tbody tr {
+  background-color: rgba(230, 0, 0, 0.25);
+}
+.menu-management-container table tbody tr td {
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding: 10px;
+}
+.menu-management-container table tbody tr td img {
+  height: 40px;
+}
+.menu-management-container table tbody tr td.name {
+  color: #ffcc00;
+}
+.menu-management-container table tbody tr td.description {
+  color: rgb(255, 255, 255);
+}
+.menu-management-container table tbody tr td.price {
+  color: #ffcc00;
+}
+.menu-management-container table tbody tr td.type {
+  color: #ffcc00;
+}
+.menu-management-container table tbody tr td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.menu-management-container table tbody tr td.actions button {
+  margin: 8px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 6px;
+  line-height: 0;
+  font-size: 20px;
+}
+.menu-management-container table tbody tr td.actions button.update {
+  background-color: #ffcc00;
+}
+.menu-management-container table tbody tr td.actions button.delete {
+  background-color: rgb(230, 0, 0);
+}
+.menu-management-container .btn-add-product {
+  background-color: #ffcc00;
+  text-align: center;
+  display: block;
+  padding: 7px 40px;
+  margin: 50px auto;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+.menu-management-container .btn-add-product a {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+}
+@media (max-width: 772px) {
+  .menu-management-container .btn-add-product {
+    width: 650px;
+  }
+}
+@media (max-width: 772px) {
+  .menu-management-container .menu-charts {
+    width: 650px;
+  }
+}

@@ -1,0 +1,62 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.section-name {
+  .text {
+    color: $articleColor;
+    font-size: 12px;
+  }
+}
+.feedback-container {
+  @include bg-section();
+  @include center-section(90px, 20px, 60px, 20px);
+  opacity: 0;
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .box {
+      flex: 1;
+      background-color: #00000078;
+      padding: 20px;
+      margin: 20px;
+      color: #fff;
+      @include radios(10px);
+      position: relative;
+      overflow: hidden;
+      .rating {
+        font-size: 20px;
+        li {
+          color: $secondColor;
+          svg {
+            padding: 0 5px;
+          }
+        }
+      }
+      .review {
+        color: $articleColor;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      .reviewer {
+        font-size: 25px;
+        color: $mainColor;
+      }
+      .review-img {
+        img {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          right: -47px;
+          bottom: -46px;
+          object-fit: contain;
+        }
+      }
+    }
+    // Responsive
+    @media (max-width: 772px) {
+      flex-direction: column;
+    }
+  }
+}

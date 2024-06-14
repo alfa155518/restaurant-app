@@ -1,0 +1,82 @@
+.reservation-management-container {
+  padding: 60px 10px;
+  margin: 70px 5px;
+}
+.reservation-management-container .empty-data {
+  height: 100vh;
+  position: relative;
+  transform: translate(-50%, -17%);
+  -webkit-transform: translate(-50%, -17%);
+  -moz-transform: translate(-50%, -17%);
+  -ms-transform: translate(-50%, -17%);
+  -o-transform: translate(-50%, -17%);
+}
+.reservation-management-container table {
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.reservation-management-container table thead tr th {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.reservation-management-container table tbody tr {
+  background-color: rgba(230, 0, 0, 0.25);
+}
+.reservation-management-container table tbody tr td.img {
+  padding: 7px;
+}
+.reservation-management-container table tbody tr td.img img {
+  height: 50px;
+}
+.reservation-management-container table tbody tr td.name {
+  color: #ffcc00;
+  font-size: 18px;
+}
+.reservation-management-container table tbody tr td.people {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 17px;
+  font-size: 20px;
+}
+.reservation-management-container table tbody tr td.people .icon {
+  color: rgb(255, 204, 0);
+  font-size: 32px;
+}
+.reservation-management-container table tbody tr td.price {
+  color: #ffcc00;
+}
+.reservation-management-container table tbody tr td.status span {
+  background-color: green;
+  padding: 3px 10px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+.reservation-management-container table tbody tr td.btn-cancel button {
+  color: rgb(255, 255, 255);
+  padding: 6px 27px;
+  background-color: rgb(230, 0, 0);
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -ms-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+}
+.reservation-management-container table tbody tr td.btn-cancel button:hover {
+  background-color: #ffcc00;
+}

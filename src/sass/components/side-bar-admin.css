@@ -1,0 +1,114 @@
+aside {
+  background-color: rgba(16, 12, 42, 0.8509803922);
+  transition: 0.6s ease-in-out;
+  -webkit-transition: 0.6s ease-in-out;
+  -moz-transition: 0.6s ease-in-out;
+  -ms-transition: 0.6s ease-in-out;
+  -o-transition: 0.6s ease-in-out;
+  overflow: hidden;
+}
+aside .close-bar {
+  position: absolute;
+  top: 37px;
+  left: 37px;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  font-size: 25px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  line-height: 0;
+  padding: 1px;
+  cursor: pointer;
+  display: none;
+}
+aside .side-bar-admin {
+  color: rgb(255, 255, 255);
+}
+aside .side-bar-admin li {
+  padding: 10px 0;
+}
+aside .side-bar-admin li:first-child {
+  padding: 27px 0;
+  transform: translate(-11%, 6%);
+  -webkit-transform: translate(-11%, 6%);
+  -moz-transform: translate(-11%, 6%);
+  -ms-transform: translate(-11%, 6%);
+  -o-transform: translate(-11%, 6%);
+  position: relative;
+  text-align: center;
+}
+aside .side-bar-admin li:first-child::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  width: 118%;
+  height: 1px;
+  background-color: #ffcc00;
+  left: -21px;
+}
+aside .side-bar-admin li:not(:first-child) {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  transition: 0.4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -ms-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+}
+aside .side-bar-admin li:not(:first-child):hover {
+  scale: 1.1;
+}
+aside .side-bar-admin li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+aside .side-bar-admin li .admin-name {
+  display: block;
+  color: #ffcc00;
+  font-size: 20px;
+}
+aside .side-bar-admin li .icon {
+  color: #ffcc00;
+  font-size: 25px;
+}
+@media (max-width: 772px) {
+  aside {
+    position: absolute;
+    width: 100% !important;
+    top: -100%;
+    z-index: 2;
+  }
+  aside .close-bar {
+    display: block;
+  }
+  aside li:first-child {
+    transform: translate(10px, 10px) !important;
+    -webkit-transfor: translate(10px, 10px) !important;
+    -moz-transform: translate(10px, 10px) !important;
+    -ms-transform: translate(10px, 10px) !important;
+    -o-transform: translate(10px, 10px) !important;
+  }
+  aside li:first-child::before {
+    left: -53px !important;
+  }
+  aside li:not(:first-child) {
+    border-bottom: 1px solid #ffcc00;
+    justify-content: center;
+  }
+  aside li:last-child {
+    border: none;
+  }
+}

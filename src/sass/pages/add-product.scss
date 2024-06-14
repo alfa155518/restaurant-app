@@ -1,0 +1,51 @@
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+
+form {
+  height: 100vh;
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  h2 {
+    font-size: 25px;
+    color: $btnAndTextColor;
+  }
+  label {
+    color: $btnAndTextColor;
+    width: 150px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 20px auto;
+    padding: 10px;
+    letter-spacing: 2px;
+    @include transition(.5s,ease-in-out);
+    @include radios(40px);
+    &:hover {
+      background-color: $mainColor;
+      color: $wordsColor;
+    }
+  }
+  input {
+    width: 75% !important;
+    margin: 10px auto !important;
+    &[type="file"] {
+      display: none;
+    }
+  }
+  select {
+    text-align: center;
+    width: 100px;
+    margin: 20px auto;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    color: #777;
+  }
+}

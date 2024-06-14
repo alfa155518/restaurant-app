@@ -1,0 +1,31 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.section-name {
+  span {
+    font-size: 17px;
+    display: block;
+    color: $articleColor;
+    margin-top: 10px;
+  }
+}
+.popular-wrapper {
+  display: grid;
+  @include box-by-grid(280px);
+  @include center-section(60px, 25px, 80px, 20px);
+  @media (max-width: 372px) {
+    @include box-by-grid(220px);
+  }
+}
+
+.more-products {
+  background-color: $mainColor;
+  font-size: 25px;
+  color: $wordsColor;
+  display: block;
+  text-align: center;
+  margin: 127px auto;
+  width: fit-content;
+  padding: 5px 31px;
+  @include radios(25px);
+}

@@ -1,0 +1,13 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.tables-wrapper {
+  @include center-section(60px, 20px, 80px, 10px);
+  @include box-by-grid(300px);
+  @media (max-width: 772px) {
+    @include box-by-grid(250px);
+  }
+  @media (max-width: 480px) {
+    @include box-by-grid(200px);
+  }
+}

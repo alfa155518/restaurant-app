@@ -1,0 +1,36 @@
+
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+
+.employees-management-container {
+  @include center-section(60px,10px,70px,5px);
+  table {
+    @include centerTable($wordsColor);
+    @include thead($wordsColor);
+    tbody {
+      tr {
+        background-color: $tableMainColor;
+        td {
+          img {
+            height: 50px;
+            padding: 10px;
+          }
+          &.name {
+            color: $btnAndTextColor;
+            font-size: 18px;
+          }
+          &.job {
+            color: $secondColor;
+            font-size: 19px
+          }
+          &.time {
+
+          }
+          @include tableActions($btnAndTextColor, $mainColor, $wordsColor);
+        }
+      }
+    }
+  }
+}

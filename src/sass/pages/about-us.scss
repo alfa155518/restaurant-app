@@ -1,0 +1,104 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.wrapper-about-us {
+  .advantages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid $articleColor;
+    @include center-section(60px, 10px, 20px, 10px);
+    opacity: 0;
+    .advantage {
+      padding: 10px;
+      margin: 10px;
+      .icon {
+        background: linear-gradient($mainColor, $secondColor);
+        color: $wordsColor;
+        padding: 15px;
+        font-size: 30px;
+        @include radios(50%);
+        font-weight: 900;
+      }
+      .info {
+        .title {
+          color: $wordsColor;
+          font-size: 25px;
+          font-weight: 900;
+          margin-bottom: 5px;
+        }
+        .desc {
+          color: $articleColor;
+        }
+      }
+    }
+    // Responsive in Medium Screens
+    @media (max-width: 772px) {
+      flex-direction: column;
+    }
+  }
+  .deliver-quality,
+  .award-chef {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include center-section(40px, 20px, 80px, 20px);
+    .info {
+      flex: 1;
+      opacity: 0;
+      .text {
+        color: $articleColor;
+        line-height: 1.8;
+      }
+      a {
+        color: $wordsColor;
+        background-color: $mainColor;
+        font-size: 17px;
+        padding: 8px 16px;
+        margin: 20px;
+        @include radios(50px);
+        @include transition(0.5s, ease-in-out);
+        &:hover {
+          background-color: $btnAndTextColor;
+          color: $bodyColor;
+        }
+      }
+    }
+    .deliver-img,
+    .chef-img {
+      flex: 1;
+      text-align: center;
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+        margin: 20px 0;
+        padding: 15px;
+      }
+      .chef {
+        width: 500px;
+        height: 500px;
+      }
+    }
+    // Responsive
+    @media (max-width: 772px) {
+      flex-direction: column;
+      .chef {
+        width: 300px !important;
+        height: 300px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .deliver-img,
+      .chef-img {
+        img {
+          width: 150px !important;
+          height: 150px !important;
+        }
+      }
+    }
+  }
+    // Chefs Section
+    @include handel-chefs-wrapper;
+}

@@ -1,0 +1,23 @@
+.arrow-to-top {
+  position: fixed;
+  background: rgb(230, 0, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  top: 92%;
+  left: 93%;
+  padding: 7px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  line-height: 0;
+  font-size: 18px;
+  font-weight: bold;
+  display: none;
+}
+@media (max-width: 480px) {
+  .arrow-to-top {
+    left: 85%;
+  }
+}

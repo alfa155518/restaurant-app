@@ -1,0 +1,37 @@
+.section-name span {
+  font-size: 17px;
+  display: block;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.popular-wrapper {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  padding: 60px 25px;
+  margin: 80px 20px;
+}
+@media (max-width: 372px) {
+  .popular-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+.more-products {
+  background-color: rgb(230, 0, 0);
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  display: block;
+  text-align: center;
+  margin: 127px auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 31px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}

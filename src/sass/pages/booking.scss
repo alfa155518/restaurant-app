@@ -1,0 +1,100 @@
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+
+%handlers-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bookings {
+  @include center-section(80px, 20px, 60px, 10px);
+  @include box-by-grid(300px);
+  @media (max-width: 772px) {
+    @include box-by-grid(250px);
+  }
+  @media (max-width: 480px) {
+    @include box-by-grid(200px);
+  }
+  .table {
+    margin: 10px;
+    .summary {
+      padding: 10px;
+      color: $articleColor;
+    }
+    .booking-table-info {
+      border-top: 1px solid $articleColor;
+      ul {
+        li {
+          @extend %handlers-info;
+          // justify-content: center;
+          padding: 5px 0;
+          margin: 5px auto;
+          color: $wordsColor;
+          span {
+            @extend %handlers-info;
+            justify-content: center;
+            flex-wrap: wrap;
+            .icon {
+              font-size: 25px;
+            }
+            &.people {
+              .icon {
+                color: $mainColor;
+              }
+            }
+            &.price {
+              .icon {
+                color: green;
+              }
+            }
+            &.rating {
+              .icon {
+                color: $secondColor;
+              }
+            }
+            &.status {
+              .icon {
+                color: $mainColor;
+              }
+            }
+          }
+          @media (max-width:772px) {
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .booking-table-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+      span {
+        color: $wordsColor;
+        border: 1px solid $articleColor;
+        @include radios(25px);
+        margin: 10px;
+        padding: 6px 15px;
+        cursor: pointer;
+        font-size: 17px;
+        @include transition(0.8s, ease-in-out);
+        &.paying {
+          &:hover {
+            background-color: $btnAndTextColor;
+            border: none;
+          }
+        } 
+        &.cancel {
+          &:hover {
+            background-color: $mainColor;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

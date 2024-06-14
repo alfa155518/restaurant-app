@@ -1,0 +1,74 @@
+.cart-container table tbody tr td.quantity .minus, .cart-container table tbody tr td.quantity .plus {
+  margin-top: 5px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.cart-container {
+  padding: 40px 0px;
+}
+.cart-container .empty-data {
+  transform: translate(-50%, 100%);
+  -webkit-transform: translate(-50%, 100%);
+  -moz-transform: translate(-50%, 100%);
+  -ms-transform: translate(-50%, 100%);
+  -o-transform: translate(-50%, 100%);
+}
+.cart-container table {
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.cart-container table thead tr th {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.cart-container table tbody tr {
+  background-color: rgba(230, 0, 0, 0.25);
+}
+.cart-container table tbody tr td.remove-product {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  cursor: pointer;
+}
+.cart-container table tbody tr td img {
+  padding: 5px;
+  height: 40px;
+}
+.cart-container table tbody tr td.name {
+  color: #ffcc00;
+  font-size: 22px;
+}
+.cart-container table tbody tr td.price {
+  color: #ccc;
+  font-size: 20px;
+}
+.cart-container table tbody tr td.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 5px;
+}
+.cart-container table tbody tr td.quantity span {
+  font-size: 25px;
+}
+.cart-container table tbody tr td.quantity .quantity-num {
+  color: #ffcc00;
+}
+.cart-container table tbody tr td.total {
+  color: #ffcc00;
+  font-size: 20px;
+}
+.cart-container .total-price {
+  font-family: "Roboto", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  padding: 20px 20px;
+}
+.cart-container .total-price span {
+  font-size: 25px;
+  font-weight: 900;
+  color: #ffcc00;
+}

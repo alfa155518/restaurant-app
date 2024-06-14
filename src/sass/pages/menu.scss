@@ -1,0 +1,29 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.menu-content {
+  .categories {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      color: $wordsColor;
+      padding: 5px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 17px;
+      text-transform: capitalize;
+    }
+    @media (max-width: 472px) {
+      flex-direction: column;
+    }
+  }
+  .menu-products {
+    @include box-by-grid(250px);
+    @include center-section(20px, 25px, 10px, 20px);
+    @media (max-width: 372px) {
+      @include box-by-grid(220px);
+    }
+  }
+}

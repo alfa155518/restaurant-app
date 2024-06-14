@@ -1,0 +1,105 @@
+.product-component {
+  border: 1px solid rgb(255, 255, 255);
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  position: relative;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.product-component .favorite {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  font-size: 26px;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.product-component .favorite:hover {
+  color: rgb(255, 204, 0);
+}
+.product-component .product-img img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.product-component .ratings .star {
+  color: #ffcc00;
+}
+.product-component .ratings .half-star {
+  color: rgb(255, 204, 0);
+}
+.product-component .desc {
+  color: #ccc;
+}
+.product-component .price {
+  color: rgb(230, 0, 0);
+  font-size: 25px;
+}
+.product-component .actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+.product-component .actions li {
+  color: rgb(255, 255, 255);
+}
+.product-component .actions li a {
+  color: rgb(255, 255, 255);
+}
+.product-component .actions .cart {
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+.product-component .actions .cart:hover {
+  background-color: #ffcc00;
+  border: none;
+}
+.product-component .actions .cart:hover a {
+  color: rgba(0, 0, 0, 0.9215686275);
+}
+.product-component .actions .eye {
+  background-color: #4b4545;
+  padding: 5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  line-height: 0;
+  font-size: 20px;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+.product-component .actions .eye:hover {
+  background-color: rgb(230, 0, 0);
+}

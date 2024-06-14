@@ -1,0 +1,15 @@
+@use "../helpers/mixins" as *;
+.gallery-container {
+  @include center-section(80px, 20px, 60px, 20px);
+  opacity: 0;
+  .swiper-slide {
+    width: 28% !important;
+    img {
+      @include swipper-handler(350px, 350px);
+    }
+  }
+  // Responsive  Medium Screens
+  @include responsive-swipper-medium-screens;
+  // Responsive  Small Screens
+  @include responsive-swipper-small-screens;
+}

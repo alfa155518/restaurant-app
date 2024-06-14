@@ -1,0 +1,33 @@
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.user-management-container {
+  @include center-section(60px,10px,70px,5px);
+  table {
+    @include centerTable($wordsColor);
+    @include thead($wordsColor);
+    tbody {
+      tr {
+        background-color: $tableMainColor;
+        td {
+          @include tableTd;
+          img {
+            height: 40px;
+            @include radios(50%)
+          }
+          &.first-name {
+            color: $btnAndTextColor;
+          }
+          &.last-name {
+            color: $wordsColor;
+          }
+          &.email {
+            color: $btnAndTextColor;
+          }
+          @include tableActions($btnAndTextColor, $mainColor, $wordsColor);
+        }
+      }
+    }
+  }
+}

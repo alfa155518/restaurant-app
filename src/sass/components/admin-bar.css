@@ -1,0 +1,56 @@
+.admin-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-bar ul li {
+  display: flex;
+  align-items: center;
+}
+.admin-bar ul li.bars-icon {
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+.admin-bar ul li.bars-icon svg {
+  color: #ffcc00;
+}
+.admin-bar ul li.actions .notifications {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  position: relative;
+}
+.admin-bar ul li.actions .notifications::before {
+  content: "1";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffcc00;
+  color: rgb(230, 0, 0);
+  font-size: 15px;
+  width: 11px;
+  height: 12px;
+  text-align: center;
+  font-weight: 900;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  padding: 1px;
+}
+.admin-bar ul li.actions .admin-image img {
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 10px;
+}
+@media (max-width: 773px) {
+  .admin-bar ul .bars-icon {
+    display: block !important;
+  }
+}

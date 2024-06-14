@@ -1,0 +1,67 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.contact-wrapper {
+  .contact-methods {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    @include center-section(80px, 20px, 80px, 20px);
+    border-bottom: 1px solid #eee;
+    opacity: 0;
+    .method {
+      margin: 20px;
+      padding: 10px;
+      .icon {
+        background: linear-gradient($secondColor, $mainColor);
+        color: $wordsColor;
+        font-size: 40px;
+        font-weight: 900;
+        padding: 5px;
+        @include radios(50%);
+      }
+      .info {
+        strong {
+          display: block;
+          padding: 8px 0;
+        }
+        .method-name {
+          color: $wordsColor;
+          font-size: 20px;
+        }
+        .method-info {
+          color: $articleColor;
+        }
+        span {
+          color: $mainColor;
+        }
+      }
+    }
+    // Responsive in Medium Screens
+    @media (max-width: 772px) {
+      flex-direction: column;
+    }
+  }
+  // Contact Form
+  .contact-form {
+    @include center-section(20px, 20px, 10px, 20px);
+    opacity: 0;
+    textarea {
+      resize: none;
+      padding: 25px;
+      margin: 15px;
+      width: 50%;
+      outline: none;
+      @include radios(5px);
+    }
+    // responsive form in medium screens
+    @include form-medium-medium-screens {
+      input {
+        margin: 10px;
+      }
+    }
+    // Responsive btn send data in small Screens
+    @include btn-send-data-small-screens;
+  }
+}

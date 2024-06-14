@@ -1,0 +1,67 @@
+.about-wrapper {
+  padding: 80px 20px;
+  margin: 60px 10px;
+}
+.about-wrapper .about-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.about-wrapper .about-container .about-img {
+  flex: 1;
+  opacity: 0;
+}
+.about-wrapper .about-container .about-img img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.about-wrapper .about-container .about-info {
+  flex: 1;
+}
+.about-wrapper .about-container .about-info .title {
+  font-size: 35px;
+  color: rgb(255, 255, 255);
+}
+.about-wrapper .about-container .about-info .title strong {
+  font-weight: 900;
+  color: rgb(230, 0, 0);
+}
+.about-wrapper .about-container .about-info .text {
+  line-height: 1.6;
+  color: #ccc;
+  font-size: 17px;
+}
+.about-wrapper .about-container .about-info .confirmations {
+  text-align: start;
+}
+.about-wrapper .about-container .about-info .confirmations li {
+  margin: 7px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about-wrapper .about-container .about-info .confirmations li .icon {
+  color: rgb(230, 0, 0);
+  margin: 0 5px;
+  font-size: 25px;
+}
+.about-wrapper .about-container .about-info .confirmations li span {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}
+@media (max-width: 772px) {
+  .about-wrapper .about-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 468px) {
+  .about-wrapper .about-container .about-img img {
+    width: 150px;
+    height: 150px;
+  }
+}

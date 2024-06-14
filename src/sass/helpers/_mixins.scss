@@ -1,0 +1,175 @@
+// ============ Transition ===============
+@mixin transition($time, $behavior) {
+  transition: $time $behavior;
+  -webkit-transition: $time $behavior;
+  -moz-transition: $time $behavior;
+  -ms-transition: $time $behavior;
+  -o-transition: $time $behavior;
+}
+
+@mixin transform($x , $y) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+}
+
+// ============ Border Radios ===============
+@mixin radios($size) {
+  border-radius: $size;
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  -ms-border-radius: $size;
+  -o-border-radius: $size;
+}
+
+// ============= Center Any Section ===============
+@mixin center-section(
+  $p-top-bottom,
+  $p-right-left,
+  $m-top-bottom,
+  $m-right-left
+) {
+  padding: $p-top-bottom $p-right-left;
+  margin: $m-top-bottom $m-right-left;
+}
+
+// ============ Background Image Section ===============
+
+@mixin bg-section() {
+  background-image: url("../../images//static-img.WebP");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// ============ handle Boxes By Grid ===============
+@mixin box-by-grid($size) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  @content;
+}
+
+// ============ Swipper Component ===============
+@mixin swipper-handler($img-width: 200, $img-height: 200) {
+  width: $img-width;
+  height: $img-height;
+}
+
+// ========= Responsive  Swipper Medium Screens  ==========
+@mixin responsive-swipper-medium-screens {
+  @media (max-width: 972px) {
+    .swiper-slide {
+      width: 30%;
+      img {
+        @include swipper-handler(200px, 200px);
+      }
+    }
+  }
+}
+
+// ========= Responsive  Swipper Small Screens  ==========
+@mixin responsive-swipper-small-screens {
+  @media (max-width: 680px) {
+    .swiper-slide {
+      width: 40%;
+      img {
+        @include swipper-handler(100%, 150px);
+      }
+    }
+  }
+}
+
+// ========= Responsive  Form Medium Screens  ==========
+@mixin form-medium-medium-screens {
+  @media (max-width: 672px) {
+    .form-group {
+      padding: 5px 0;
+      margin: 0;
+      @content;
+    }
+  }
+}
+// ========= Responsive  Send Data Btn Small Screens  ==========
+@mixin btn-send-data-small-screens {
+  @media (max-width: 472px) {
+    .submit-btn {
+      font-size: 17px;
+      padding: 5px;
+    }
+  }
+}
+
+// ==================== Handel Chefs Wrapper ==============
+
+@mixin handel-chefs-wrapper {
+  .chefs-wrapper {
+    @include center-section(80px, 20px, 60px, 20px);
+    .swiper-slide {
+      width: 28% !important;
+      img {
+        @include swipper-handler(350px, 350px);
+      }
+    }
+    // Responsive  Medium Screens
+    @include responsive-swipper-medium-screens;
+    // Responsive  Small Screens
+    @include responsive-swipper-small-screens;
+  }
+}
+
+
+// ==================== Handel thead in Table ==============
+@mixin thead($color) {
+  thead {
+    tr {
+      th {
+        color: $color;
+    font-size: 20px;
+    letter-spacing: 1px;
+    }
+    }
+}
+}
+
+// ==================== Center any Table ==============
+@mixin centerTable($color) {
+    width: 100%;
+    text-align: center;
+    color: $color;
+}
+
+// ==================== Styles Table Actions ==============
+@mixin tableActions($updateColor,$deleteColor,$buttonColor) {
+  &.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    button {
+      margin: 8px;
+      @include radios(3px);
+      border: none;
+      outline: none;
+      color: $buttonColor;
+      cursor: pointer;
+      padding: 6px;
+      line-height: 0;
+      font-size: 20px;
+    &.update {
+      background-color: $updateColor;
+    }
+    &.delete {
+      background-color: $deleteColor;
+    }
+    }
+  }
+}
+
+// ==================== Styles Table td ==============
+@mixin tableTd {
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding: 10px;
+}

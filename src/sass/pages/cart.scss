@@ -1,0 +1,77 @@
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+%plus-and-minus {
+  margin-top: 5px;
+  cursor: pointer;
+  color: $wordsColor;
+}
+.cart-container {
+  padding: 40px 0px;
+  .empty-data {
+    @include transform(-50%,100%)
+  }
+  table {
+  @include centerTable($wordsColor);
+  @include thead($wordsColor);
+  tbody {
+    tr {
+      background-color: $tableMainColor;
+      td {
+        &.remove-product {
+          color: $wordsColor;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        img {
+        padding: 5px;
+        height: 40px;
+        }
+      &.name {
+        color: $btnAndTextColor;
+        font-size: 22px;
+      }
+        &.price {
+          color: $articleColor;
+          font-size: 20px;
+        }
+      &.quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top:15px;
+        gap: 5px;
+        span {
+          font-size: 25px;
+        }
+        .plus {
+        @extend %plus-and-minus;
+          }
+          .quantity-num {
+            color: $btnAndTextColor;
+          }
+          .minus {
+        @extend %plus-and-minus;
+          }
+        }
+        &.total {
+          color: $btnAndTextColor;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+.total-price {
+  font-family: "Roboto", sans-serif;
+  color: $wordsColor;
+  font-size: 17px;
+  padding: 20px 20px;
+  span {
+    font-size: 25px;
+    font-weight: 900;
+    color: $btnAndTextColor;
+  }
+}
+}

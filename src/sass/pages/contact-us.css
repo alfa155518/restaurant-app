@@ -1,0 +1,77 @@
+.contact-wrapper .contact-methods {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 80px 20px;
+  margin: 80px 20px;
+  border-bottom: 1px solid #eee;
+  opacity: 0;
+}
+.contact-wrapper .contact-methods .method {
+  margin: 20px;
+  padding: 10px;
+}
+.contact-wrapper .contact-methods .method .icon {
+  background: linear-gradient(rgb(255, 204, 0), rgb(230, 0, 0));
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-weight: 900;
+  padding: 5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.contact-wrapper .contact-methods .method .info strong {
+  display: block;
+  padding: 8px 0;
+}
+.contact-wrapper .contact-methods .method .info .method-name {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.contact-wrapper .contact-methods .method .info .method-info {
+  color: #ccc;
+}
+.contact-wrapper .contact-methods .method .info span {
+  color: rgb(230, 0, 0);
+}
+@media (max-width: 772px) {
+  .contact-wrapper .contact-methods {
+    flex-direction: column;
+  }
+}
+.contact-wrapper .contact-form {
+  padding: 20px 20px;
+  margin: 10px 20px;
+  opacity: 0;
+}
+.contact-wrapper .contact-form textarea {
+  resize: none;
+  padding: 25px;
+  margin: 15px;
+  width: 50%;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+@media (max-width: 672px) {
+  .contact-wrapper .contact-form .form-group {
+    padding: 5px 0;
+    margin: 0;
+  }
+  .contact-wrapper .contact-form .form-group input {
+    margin: 10px;
+  }
+}
+@media (max-width: 472px) {
+  .contact-wrapper .contact-form .submit-btn {
+    font-size: 17px;
+    padding: 5px;
+  }
+}

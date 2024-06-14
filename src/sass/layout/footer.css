@@ -1,0 +1,137 @@
+footer {
+  padding: 100px 10px;
+  margin: 60px 10px;
+  background-image: url("../../images//static-img.WebP");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+footer .subscription {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  text-align: center;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+footer .subscription .logo {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+}
+footer .subscription .logo img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+footer .subscription .news-title {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+}
+footer .subscription .news-title h2 {
+  color: rgb(255, 255, 255);
+  margin-bottom: 0;
+}
+footer .subscription .news-title span {
+  color: #ccc;
+}
+footer .subscription form {
+  flex: 2;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+footer .subscription form input {
+  padding: 10px 42px;
+  border: none;
+  border-radius: 24px;
+  outline: none;
+}
+footer .subscription form button {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(230, 0, 0);
+  color: rgba(0, 0, 0, 0.9215686275);
+  font-size: 20px;
+  font-weight: 900;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+@media (max-width: 480px) {
+  footer .subscription form input {
+    padding-right: 10px !important;
+    width: 100%;
+  }
+}
+footer .footer-content {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 80px;
+  margin: 0 60px;
+}
+footer .footer-content .links {
+  flex: 1;
+}
+footer .footer-content .links span {
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+}
+footer .footer-content .links p {
+  color: rgb(255, 255, 255);
+}
+footer .footer-content .links p span {
+  color: #ffcc00;
+}
+footer .footer-content .links .title-link {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+footer .footer-content .links li {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 5px 0;
+}
+footer .footer-content .links li a {
+  color: #ccc;
+}
+footer .footer-content .links li a .icon {
+  background-color: rgb(230, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 50%;
+}
+footer .footer-content .links li a strong {
+  color: #ccc;
+}
+footer .footer-content .get-touch li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+}
+
+.copy-right {
+  text-align: center;
+}
+.copy-right p {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.copy-right p strong {
+  color: rgb(230, 0, 0);
+  font-size: 30px;
+}

@@ -1,0 +1,14 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+form {
+  .form-container {
+    .form-group {
+      input {
+        margin: 10px;
+      }
+    }
+    .submit-btn {
+      width: 30%;
+    }
+  }
+}

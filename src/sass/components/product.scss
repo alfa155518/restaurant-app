@@ -1,0 +1,86 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+.product-component {
+  border: 1px solid $wordsColor;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  color: $wordsColor;
+  position: relative;
+  @include radios(15px);
+  .favorite {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 26px;
+    font-weight: bold;
+    @include transition(0.5s, ease-in-out);
+    cursor: pointer;
+    &:hover {
+      color: $secondColor;
+    }
+  }
+  .product-img {
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+  }
+  .ratings {
+    .star {
+      color: $btnAndTextColor;
+    }
+    .half-star {
+      color: $secondColor;
+    }
+  }
+  .desc {
+    color: $articleColor;
+  }
+  .price {
+    color: $mainColor;
+    font-size: 25px;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    li {
+      color: $wordsColor;
+      a {
+        color: $wordsColor;
+      }
+    }
+    .cart {
+      border: 1px solid $wordsColor;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      @include radios(25px);
+      cursor: pointer;
+      @include transition(0.5s, ease-in-out);
+      &:hover {
+        background-color: $btnAndTextColor;
+        border: none;
+        a {
+          color: $bodyColor;
+        }
+      }
+    }
+    .eye {
+      background-color: #4b4545;
+      padding: 5px;
+      @include radios(50%);
+      line-height: 0;
+      font-size: 20px;
+      @include transition(0.5s, ease-in-out);
+      &:hover {
+        background-color: $mainColor;
+      }
+    }
+  }
+}

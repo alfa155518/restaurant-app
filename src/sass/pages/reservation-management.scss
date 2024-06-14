@@ -1,0 +1,72 @@
+
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.reservation-management-container {
+  @include center-section(60px, 10px, 70px, 5px);
+  .empty-data {
+    height: 100vh;
+    position: relative;
+    @include transform(-50%,-17%);
+  }
+  table {
+    @include centerTable($wordsColor);
+    @include thead($wordsColor);
+    tbody {
+      tr {
+        background-color: $tableMainColor;
+        td {
+          &.img {
+            padding: 7px;
+            img {
+              height: 50px;
+            }
+          }
+          &.name {
+            color: $btnAndTextColor;
+            font-size: 18px;
+          }
+          &.people {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 17px;
+            font-size: 20px;
+            .icon {
+              color: $secondColor;
+              font-size: 32px;
+            }
+          }
+          &.price {
+            color: $btnAndTextColor;
+          }
+          &.status {
+            span {
+              background-color: green;
+              padding: 3px 10px;
+              @include radios(25px);
+            }
+          }
+          &.btn-cancel {
+            button {
+              color: $wordsColor;
+              padding: 6px 27px;
+              background-color: $mainColor;
+              outline: none;
+              border: none;
+              @include radios(25px);
+              cursor: pointer;
+              font-size: 18px;
+              @include transition(0.5s, ease-in);
+              &:hover {
+                background-color: $btnAndTextColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

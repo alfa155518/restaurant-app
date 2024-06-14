@@ -1,0 +1,19 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+.arrow-to-top {
+  position: fixed;
+  background: $mainColor;
+  color: $wordsColor;
+  cursor: pointer;
+  top: 92%;
+  left: 93%;
+  padding: 7px;
+  @include radios(50%);
+  line-height: 0;
+  font-size: 18px;
+  font-weight: bold;
+  display: none;
+  @media (max-width: 480px) {
+    left: 85%;
+  }
+}

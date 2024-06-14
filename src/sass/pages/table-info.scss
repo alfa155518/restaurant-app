@@ -1,0 +1,270 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+%section-name {
+  font-size: 40px;
+  letter-spacing: 3px;
+  color: $btnAndTextColor;
+}
+
+.table-info-container {
+  .image-cover {
+    position: relative;
+    width: 100%;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $secondBlackColor;
+      width: 100%;
+      height: 500px;
+      top: 0;
+      right: 0;
+      opacity: 0.5;
+    }
+    img {
+      width: 100%;
+      height: 500px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .table-name {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      font-size: 60px;
+      letter-spacing: 2px;
+      color: $btnAndTextColor;
+      z-index: 1;
+      text-transform: capitalize;
+      @include transform(-50%,-50%)
+    }
+  }
+  // All Details About Table
+  .details {
+    display: flex;
+    flex-direction: row-reverse;
+    color: #fff;
+    @include center-section(60px, 40px, 80px, 10px);
+    .desorption {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      .name {
+        color: $mainColor;
+        font-size: 35px;
+        text-transform: capitalize;
+      }
+      .summary {
+        line-height: 1.5;
+        padding: 40px 0;
+        font-size: 17px;
+      }
+      article {
+        color: $articleColor;
+        line-height: 1.6;
+        padding: 20px 0;
+        font-size: 20px;
+      }
+    }
+    .info {
+      flex: 1;
+      padding: 20px 0px 20px 0px;
+      h3 {
+        @extend %section-name;
+      }
+      span {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 18px;
+        padding: 15px 0;
+        margin: 10px 0;
+        &.status,
+        &.price {
+          .icon {
+            color: green;
+          }
+        }
+        &.rating {
+          .icon {
+            color: yellow;
+            font-size: 35px;
+          }
+        }
+        .icon {
+          font-size: 30px;
+          color: $mainColor;
+        }
+      }
+    }
+  }
+  .chefs-wrapper {
+    @include handel-chefs-wrapper;
+  }
+  // Tables Images
+  .table-images {
+    @include center-section(30px, 20px, 20px, 20px);
+    h5 {
+      @extend %section-name;
+      text-align: center;
+    }
+    .swiper-slide {
+      width: 45% !important;
+      img {
+        @include swipper-handler(500px, 500px);
+      }
+    }
+    // Responsive  Medium Screens
+    @include responsive-swipper-medium-screens;
+    // Responsive  Small Screens
+    @include responsive-swipper-small-screens;
+  }
+  h6 {
+    @extend %section-name;
+    text-align: center;
+  }
+  // User Reviews
+  .reviews {
+    @include box-by-grid(400px);
+    @include center-section(40px, 50px, 20px, 20px);
+    text-align: center;
+    .review {
+      border: 1px solid $wordsColor;
+      padding: 20px;
+      @include radios(15px);
+      margin: 20px;
+      .user-img {
+        margin: 0 auto;
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+          @include radios(50%);
+        }
+      }
+      .details {
+        margin: 0;
+        font-size: 20px;
+        padding: 20px 0;
+      }
+      .ratings {
+        margin: 0;
+        li {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          .star {
+            color: $secondColor;
+          }
+          .half-star {
+            color: $secondColor;
+          }
+        }
+      }
+    }
+  }
+
+  // Booking Table
+  .booking-table {
+    @include center-section(50px, 20px, 40px, 20px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    border: 2px solid $articleColor;
+    @include radios(24px);
+    .table-image {
+      flex: 1;
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        @include radios(150px);
+      }
+    }
+    .about-booking {
+      flex: 2;
+      strong {
+        display: block;
+        margin: 10px;
+        color: $btnAndTextColor;
+        font-size: 25px;
+      }
+      p {
+        font-size: 17px;
+        padding: 5px;
+        color: $articleColor;
+      }
+    }
+    .btn-booking {
+      flex: 1;
+      background-color: $btnAndTextColor;
+      color: $mainColor;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px 17px;
+      cursor: pointer;
+      @include radios(25px);
+    }
+  }
+
+  //Responsive
+  @media (max-width: 480px) {
+    .image-cover {
+      .table-name {
+        font-size: 30px;
+      }
+    }
+    .details {
+      .info {
+        span {
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+  @media (max-width: 772px) {
+    .details {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      .info {
+        span {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .reviews {
+    @media (max-width: 572px) {
+      @include box-by-grid(250px);
+    }
+    @media (max-width: 380px) {
+      @include box-by-grid(150px);
+      .review {
+        .user-img {
+          img {
+            width: 64px;
+            height: 64px;
+          }
+        }
+      }
+      .ratings {
+        li {
+          flex-wrap: wrap;
+          .star,
+          .half-star {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .booking-table {
+      flex-direction: column;
+    }
+  }
+}

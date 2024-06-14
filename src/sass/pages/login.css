@@ -1,0 +1,6 @@
+form .form-container .form-group input {
+  margin: 10px;
+}
+form .form-container .submit-btn {
+  width: 30%;
+}

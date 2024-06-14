@@ -1,0 +1,144 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+footer {
+  @include center-section(100px, 10px, 60px, 10px);
+  @include bg-section();
+  .subscription {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid $wordsColor;
+    .logo {
+      flex: 1;
+      margin: 10px;
+      padding: 10px;
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+      }
+    }
+    .news-title {
+      flex: 1;
+      margin: 5px;
+      padding: 10px;
+      h2 {
+        color: $wordsColor;
+        margin-bottom: 0;
+      }
+      span {
+        color: $articleColor;
+      }
+    }
+    form {
+      flex: 2;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      input {
+        padding: 10px 42px;
+        border: none;
+        border-radius: 24px;
+        outline: none;
+      }
+      button {
+        padding: 9px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: $mainColor;
+        color: $bodyColor;
+        font-size: 20px;
+        font-weight: 900;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+    }
+    // Responsive small screens
+    @media (max-width: 480px) {
+      form {
+        input {
+          padding-right: 10px !important;
+          width: 100%;
+        }
+      }
+    }
+  }
+  // =============== Footer Content ================
+  .footer-content {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 80px;
+    margin: 0 60px;
+    .links {
+      flex: 1;
+      span {
+        color: $wordsColor;
+        font-size: 17px;
+      }
+      p {
+        color: $wordsColor;
+        span {
+          color: $btnAndTextColor;
+        }
+      }
+      .title-link {
+        color: $wordsColor;
+        font-size: 22px;
+        letter-spacing: 1px;
+      }
+      li {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 5px 0;
+        a {
+          color: $articleColor;
+
+          .icon {
+            background-color: $mainColor;
+            color: $wordsColor;
+            padding: 5px;
+            font-size: 20px;
+            border-radius: 50%;
+          }
+          strong {
+            color: $articleColor;
+          }
+        }
+      }
+    }
+    .get-touch {
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $articleColor;
+      }
+    }
+  }
+}
+
+// Copy Right
+.copy-right {
+  text-align: center;
+  p {
+    color: $wordsColor;
+    font-size: 20px;
+    strong {
+      color: $mainColor;
+      font-size: 30px;
+    }
+  }
+}

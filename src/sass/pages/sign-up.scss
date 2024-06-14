@@ -1,0 +1,19 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+form {
+  text-align: center;
+  .form-container {
+    .have-account {
+      color: $wordsColor;
+      a {
+        color: $mainColor;
+        padding: 0 5px;
+      }
+    }
+    // responsive form in medium screens
+    @include form-medium-medium-screens;
+    // Responsive btn send data in small Screens
+    @include btn-send-data-small-screens;
+  }
+}

@@ -1,0 +1,177 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.profile-wrapper {
+  @include center-section(60px, 70px, 80px, 20px);
+  .profile-content {
+    background-color: #100c2a4f;
+    display: flex;
+    @include radios(5px);
+    overflow: hidden;
+    .bars {
+      position: absolute;
+      margin: 5px;
+      z-index: 2;
+    }
+    .side-bar {
+      flex: 1;
+      background-color: $secondBlackColor;
+      @include radios(5px);
+      @include transition(0.8s, ease-in-out);
+      .close-bar {
+        position: absolute;
+        right: 0;
+        font-size: 22px;
+        border: 1px solid $wordsColor;
+        color: $wordsColor;
+        border-radius: 50%;
+        line-height: 0;
+        padding: 3px;
+        margin: 10px;
+        cursor: pointer;
+        display: none;
+      }
+      .user-photo {
+        padding: 20px;
+        text-align: center;
+        margin: 20px auto;
+        &::before {
+          position: absolute;
+          content: "";
+          top: 156px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $btnAndTextColor;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          @include radios(50%);
+          padding: 15px 0;
+        }
+        .user-name {
+          display: block;
+          color: $btnAndTextColor;
+          font-size: 20px;
+          letter-spacing: 1px;
+        }
+      }
+      .links {
+        li {
+          padding: 10px 0;
+          margin: 5px 0;
+          position: relative;
+          @include transition(0.5s, ease-in-out);
+          &:hover {
+            margin-left: 10px;
+            &::before {
+              content: "";
+              position: absolute;
+              top: 13px;
+              height: 20px;
+              background-color: $btnAndTextColor;
+              width: 2px;
+              left: -45px;
+            }
+          }
+          a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: $btnAndTextColor;
+            font-size: 20px;
+            svg {
+            }
+
+            span {
+            }
+          }
+        }
+      }
+    }
+    .content {
+      flex: 2;
+      padding: 20px;
+      h2 {
+        color: $btnAndTextColor;
+      }
+      form {
+        &.secret-data {
+          border-top: 1px solid $btnAndTextColor;
+        }
+        h3 {
+          color: $mainColor;
+        }
+        .form-group {
+          input {
+          }
+          input[type="file"] {
+            display: none;
+          }
+
+          label {
+            font-size: 17px;
+            cursor: pointer;
+            color: $btnAndTextColor;
+            letter-spacing: 1px;
+            position: relative;
+            &::after {
+              @include transition(0.5s, ease-in-out);
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 0;
+              background-color: $btnAndTextColor;
+              right: 0;
+              bottom: 0;
+              z-index: -1;
+            }
+            &:hover {
+              &::after {
+                height: 100%;
+              }
+              color: $wordsColor;
+            }
+          }
+        }
+      }
+    }
+    // Responsive
+    @media (max-width: 772px) {
+      .side-bar {
+        position: absolute;
+        left: -100%;
+        padding: 10px;
+        height: 100%;
+        z-index: 9999;
+      }
+      .side-bar {
+        .close-bar {
+          display: block;
+        }
+      }
+      .content {
+        .section-name {
+          font-size: 25px;
+        }
+      }
+      .bars {
+        display: block;
+      }
+    }
+    @media (max-width: 572px) {
+      .content {
+        .section-name {
+          font-size: 20px;
+        }
+      }
+      input {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 772px) {
+    @include center-section(0, 0, 0, 0);
+  }
+}

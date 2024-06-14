@@ -1,0 +1,27 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.wrapper-nav {
+  @include bg-section;
+  .nik-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+    .wrapper-img {
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+    }
+    .wrapper-name {
+      color: $wordsColor;
+      font-size: 50px;
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+}

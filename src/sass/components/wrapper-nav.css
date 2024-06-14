@@ -1,0 +1,27 @@
+.wrapper-nav {
+  background-image: url("../../images//static-img.WebP");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.wrapper-nav .nik-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+.wrapper-nav .nik-name .wrapper-img img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+    object-fit: contain;
+}
+.wrapper-nav .nik-name .wrapper-name {
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+}
+@media (max-width: 480px) {
+  .wrapper-nav .nik-name {
+    flex-direction: column;
+  }
+}

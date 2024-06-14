@@ -1,0 +1,59 @@
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.order-management-container {
+  @include center-section(60px,10px,70px,5px);
+  .empty-data {
+    height: 100vh;
+    position: relative;
+    @include transform(-50%,-17%);
+}
+  table {
+    @include centerTable($wordsColor);
+    @include thead($wordsColor);
+    tbody {
+      tr {
+        background-color: $tableMainColor;
+        td {
+          @include tableTd;
+          img {
+            height: 40px;
+          }
+        &.name {
+          color: $btnAndTextColor;
+        }
+        &.status {
+          span {
+          background-color: $mainColor;
+          @include radios(24px);
+          padding: 5px;
+          }
+        }
+        &.price {
+          color: $btnAndTextColor;
+          font-size: 23px;
+          }
+          &.quantity {
+          font-size: 23px;
+          color: $wordsColor;
+        }
+        &.type {
+          color: $secondColor;
+        }
+
+        }
+      }
+    }
+  }
+
+  .order-charts {
+   opacity: 0;
+  }
+    @media (max-width:772px) {
+      .order-charts {
+        width: 700px;
+      }
+      
+    }
+}

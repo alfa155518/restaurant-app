@@ -1,0 +1,22 @@
+form {
+  text-align: center;
+}
+form .form-container .have-account {
+  color: rgb(255, 255, 255);
+}
+form .form-container .have-account a {
+  color: rgb(230, 0, 0);
+  padding: 0 5px;
+}
+@media (max-width: 672px) {
+  form .form-container .form-group {
+    padding: 5px 0;
+    margin: 0;
+  }
+}
+@media (max-width: 472px) {
+  form .form-container .submit-btn {
+    font-size: 17px;
+    padding: 5px;
+  }
+}

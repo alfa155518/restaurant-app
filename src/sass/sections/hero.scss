@@ -1,0 +1,80 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+.hero-container {
+  @include bg-section();
+  padding-bottom: 120px;
+  margin-bottom: 80px;
+  .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .info {
+      padding: 20px;
+      flex: 1;
+      text-align: center;
+      .title {
+        font-size: 54px;
+        letter-spacing: 1px;
+        color: $wordsColor;
+        font-weight: bold;
+        strong {
+          color: $mainColor;
+        }
+      }
+      .text {
+        color: $wordsColor;
+        font-size: 20px;
+        line-height: 1.4;
+      }
+      .btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px 0;
+        button {
+          padding: 4px 22px;
+          margin: 10px 2px;
+          // color: $mainColor;
+          color: $wordsColor;
+          background-color: $mainColor;
+          font-size: 20px;
+          // border: 1px solid $wordsColor;
+          border: none;
+          @include radios(25px);
+          cursor: pointer;
+          @include transition(0.8s, ease-in-out);
+          &:hover {
+          color: $btnAndTextColor;
+          scale: 1.1;
+          }
+        }
+      }
+    }
+    .hero-img {
+      flex: 1;
+      margin: 20px;
+      text-align: center;
+      img {
+        width: 400px;
+        height: 300px;
+        object-fit: contain;
+      }
+    }
+
+    // Responsive With media
+    @media (max-width: 872px) {
+      flex-direction: column;
+      text-align: center;
+    }
+    @media (max-width: 472px) {
+      .hero-img {
+        img {
+          width: 250px;
+          height: 200px;
+        }
+      }
+    }
+  }
+}

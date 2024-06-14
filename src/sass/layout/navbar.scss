@@ -1,0 +1,192 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+.navbar-layout {
+  header {
+    border-bottom: 2px solid rgb(172 171 171);
+    .header-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 0;
+      line-height: 2;
+      color: $btnAndTextColor;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    flex-wrap: wrap;
+    position: relative;
+    .logo {
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+    }
+    .container-links {
+      .links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        li {
+          margin: 5px;
+          padding: 5px;
+          font-size: 20px;
+          letter-spacing: 2px;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: $mainColor;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            @include transform(-50%,-50%);
+            @include transition(0.5s, ease-in-out);
+          }
+          &:hover {
+            &::after {
+              width: 100%;
+            }
+          }
+          a {
+            color: $secondColor;
+          }
+        }
+      }
+    }
+    .call-us {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      svg {
+        color: $wordsColor;
+        font-weight: 500;
+        font-size: 30px;
+      }
+      span {
+        font-size: 20px;
+        color: $secondColor;
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      .cart {
+        color: $wordsColor;
+        font-size: 25px;
+        font-weight: bold;
+        border: 2px solid $mainColor;
+        line-height: 0;
+        border-radius: 50%;
+        padding: 5px;
+        a {
+          color: $wordsColor;
+        }
+      }
+      .sing-up {
+        color: $wordsColor;
+        background: $mainColor;
+        text-align: center;
+        padding: 10px;
+        border-radius: 25px;
+        @include transition(1s, ease-in-out);
+        &:hover {
+          background: rgb(146, 3, 3);
+        }
+      }
+      .profile {
+        a {
+          img {
+            width: 40px;
+            height: 40px;
+            @include radios(50%);
+          }
+        }
+      }
+    }
+    // =========== Responsive ============
+    @media (max-width: 1100px) {
+      .call-us {
+        display: none;
+      }
+    }
+    @media (max-width: 972px) {
+      .container-links {
+        position: fixed;
+        background-color: rgb(34, 34, 34);
+        height: 1000vh;
+        width: 44%;
+        left: 100%;
+        top: 0;
+        display: flex;
+        right: 39px;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 20;
+        @include transition(0.5s, ease-in-out);
+        .close-icon {
+          display: block;
+        }
+        .links {
+          flex-direction: column;
+          background-color: #00000042;
+          width: 87%;
+          align-items: flex-start;
+          li {
+            padding: 20px 0;
+            margin: 10px 0;
+            border-bottom: 1px solid #{$mainColor};
+            width: 95%;
+            position: relative;
+            right: 30px;
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+      .bars {
+        display: block;
+      }
+    }
+  }
+  @media (max-width: 472px) {
+    .container-links {
+      width: 55% !important;
+      .links {
+        width: 85% !important;
+      }
+    }
+    .appear {
+      left: 45% !important;
+    }
+  }
+  @media (max-width: 442px) {
+    header {
+      display: none;
+    }
+    nav {
+      flex-direction: column;
+      .actions {
+        flex-direction: column;
+      }
+      .container-links {
+        width: 75% !important;
+        &.appear {
+          left: 25% !important;
+        }
+      }
+    }
+  }
+}

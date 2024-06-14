@@ -1,0 +1,65 @@
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.admin-bar {
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      display: flex;
+      align-items: center;
+
+      &.bars-icon {
+        font-size: 25px;
+        cursor: pointer;
+        display: none;
+
+        svg {
+          color: $btnAndTextColor;
+        }
+      }
+
+      &.actions {
+        .notifications {
+          font-size: 25px;
+          color: $wordsColor;
+          cursor: pointer;
+          position: relative;
+
+          &::before {
+            content: "1";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ffcc00;
+            color: $mainColor;
+            font-size: 15px;
+            width: 11px;
+            height: 12px;
+            text-align: center;
+            font-weight: 900;
+            @include radios(50%);
+            padding: 1px;
+          }
+        }
+
+        .admin-image {
+          img {
+            height: 50px;
+            @include radios(50%);
+            margin: 10px;
+          }
+        }
+      }
+    }
+
+    @media (max-width:773px) {
+      .bars-icon {
+        display: block !important;
+      }
+    }
+  }
+}

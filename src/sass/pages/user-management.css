@@ -1,0 +1,67 @@
+.user-management-container {
+  padding: 60px 10px;
+  margin: 70px 5px;
+}
+.user-management-container table {
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.user-management-container table thead tr th {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.user-management-container table tbody tr {
+  background-color: rgba(230, 0, 0, 0.25);
+}
+.user-management-container table tbody tr td {
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding: 10px;
+}
+.user-management-container table tbody tr td img {
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.user-management-container table tbody tr td.first-name {
+  color: #ffcc00;
+}
+.user-management-container table tbody tr td.last-name {
+  color: rgb(255, 255, 255);
+}
+.user-management-container table tbody tr td.email {
+  color: #ffcc00;
+}
+.user-management-container table tbody tr td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.user-management-container table tbody tr td.actions button {
+  margin: 8px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 6px;
+  line-height: 0;
+  font-size: 20px;
+}
+.user-management-container table tbody tr td.actions button.update {
+  background-color: #ffcc00;
+}
+.user-management-container table tbody tr td.actions button.delete {
+  background-color: rgb(230, 0, 0);
+}

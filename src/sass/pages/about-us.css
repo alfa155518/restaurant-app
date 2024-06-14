@@ -1,0 +1,155 @@
+.wrapper-about-us .advantages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding: 60px 10px;
+  margin: 20px 10px;
+  opacity: 0;
+}
+.wrapper-about-us .advantages .advantage {
+  padding: 10px;
+  margin: 10px;
+}
+.wrapper-about-us .advantages .advantage .icon {
+  background: linear-gradient(rgb(230, 0, 0), rgb(255, 204, 0));
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  font-size: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  font-weight: 900;
+}
+.wrapper-about-us .advantages .advantage .info .title {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.wrapper-about-us .advantages .advantage .info .desc {
+  color: #ccc;
+}
+@media (max-width: 772px) {
+  .wrapper-about-us .advantages {
+    flex-direction: column;
+  }
+}
+.wrapper-about-us .deliver-quality,
+.wrapper-about-us .award-chef {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  margin: 80px 20px;
+}
+.wrapper-about-us .deliver-quality .info,
+.wrapper-about-us .award-chef .info {
+  flex: 1;
+  opacity: 0;
+}
+.wrapper-about-us .deliver-quality .info .text,
+.wrapper-about-us .award-chef .info .text {
+  color: #ccc;
+  line-height: 1.8;
+}
+.wrapper-about-us .deliver-quality .info a,
+.wrapper-about-us .award-chef .info a {
+  color: rgb(255, 255, 255);
+  background-color: rgb(230, 0, 0);
+  font-size: 17px;
+  padding: 8px 16px;
+  margin: 20px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+.wrapper-about-us .deliver-quality .info a:hover,
+.wrapper-about-us .award-chef .info a:hover {
+  background-color: #ffcc00;
+  color: rgba(0, 0, 0, 0.9215686275);
+}
+.wrapper-about-us .deliver-quality .deliver-img,
+.wrapper-about-us .deliver-quality .chef-img,
+.wrapper-about-us .award-chef .deliver-img,
+.wrapper-about-us .award-chef .chef-img {
+  flex: 1;
+  text-align: center;
+}
+.wrapper-about-us .deliver-quality .deliver-img img,
+.wrapper-about-us .deliver-quality .chef-img img,
+.wrapper-about-us .award-chef .deliver-img img,
+.wrapper-about-us .award-chef .chef-img img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 20px 0;
+  padding: 15px;
+}
+.wrapper-about-us .deliver-quality .deliver-img .chef,
+.wrapper-about-us .deliver-quality .chef-img .chef,
+.wrapper-about-us .award-chef .deliver-img .chef,
+.wrapper-about-us .award-chef .chef-img .chef {
+  width: 500px;
+  height: 500px;
+}
+@media (max-width: 772px) {
+  .wrapper-about-us .deliver-quality,
+  .wrapper-about-us .award-chef {
+    flex-direction: column;
+  }
+  .wrapper-about-us .deliver-quality .chef,
+  .wrapper-about-us .award-chef .chef {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+@media (max-width: 480px) {
+  .wrapper-about-us .deliver-quality .deliver-img img,
+  .wrapper-about-us .deliver-quality .chef-img img,
+  .wrapper-about-us .award-chef .deliver-img img,
+  .wrapper-about-us .award-chef .chef-img img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+.wrapper-about-us .chefs-wrapper {
+  padding: 80px 20px;
+  margin: 60px 20px;
+}
+.wrapper-about-us .chefs-wrapper .swiper-slide {
+  width: 28% !important;
+}
+.wrapper-about-us .chefs-wrapper .swiper-slide img {
+  width: 350px;
+  height: 350px;
+}
+@media (max-width: 972px) {
+  .wrapper-about-us .chefs-wrapper .swiper-slide {
+    width: 30%;
+  }
+  .wrapper-about-us .chefs-wrapper .swiper-slide img {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 680px) {
+  .wrapper-about-us .chefs-wrapper .swiper-slide {
+    width: 40%;
+  }
+  .wrapper-about-us .chefs-wrapper .swiper-slide img {
+    width: 100%;
+    height: 150px;
+  }
+}
