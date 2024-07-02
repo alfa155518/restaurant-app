@@ -29,10 +29,10 @@ import "./sass/components/side-bar-admin.css";
 import UpdateUser from "./pages/updateUser";
 
 function App() {
-  const { role } = JSON.parse(localStorage.getItem("newUser"));
+  const user = JSON.parse(localStorage.getItem("newUser")) || "user";
   return (
     <>
-      {role === "admin" ? (
+      {user?.role === "admin" ? (
         <AdminManageMent>
           <div className="main">
             <Routes>
