@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/restaurant-app/static/css/main.e61f7ad6.css",
-    "main.js": "/restaurant-app/static/js/main.2dacbc29.js",
+    "main.css": "/restaurant-app/static/css/main.3b75ae68.css",
+    "main.js": "/restaurant-app/static/js/main.e51d17cf.js",
     "static/media/info-5.WebP": "/restaurant-app/static/media/info-5.d7e3b8b79769ea2ed032.WebP",
     "static/media/info-11.WebP": "/restaurant-app/static/media/info-11.ebc2979fb5186767ba54.WebP",
     "static/media/info-9.WebP": "/restaurant-app/static/media/info-9.0958833a2532a59d4737.WebP",
@@ -149,16 +149,18 @@
     "static/media/Fries-3.WebP": "/restaurant-app/static/media/Fries-3.c065b12a981a1c6c4fbe.WebP",
     "static/media/drinks-1.WebP": "/restaurant-app/static/media/drinks-1.e90fa100a793e4cb30bc.WebP",
     "static/media/popular-product-13.WebP": "/restaurant-app/static/media/popular-product-13.e90fa100a793e4cb30bc.WebP",
+    "static/media/default-image.WebP": "/restaurant-app/static/media/default-image.965f659faeb7513109ff.WebP",
     "static/media/hot-pepper.WebP": "/restaurant-app/static/media/hot-pepper.bc793ae9433ef6982c6b.WebP",
     "static/media/439771693_789249223132590__n.WebP": "/restaurant-app/static/media/439771693_789249223132590_394557324656325282_n.64ebc00b9d20b3c6c86f.WebP",
     "static/media/logo.WebP": "/restaurant-app/static/media/logo.bbdaaa34654aff804cc3.WebP",
+    "static/media/default.WebP": "/restaurant-app/static/media/default.84fa46fb9bf3bceb700b.WebP",
     "static/media/user-12.WebP": "/restaurant-app/static/media/user-12.d42d68a9522c4dbd2999.WebP",
     "index.html": "/restaurant-app/index.html",
-    "main.e61f7ad6.css.map": "/restaurant-app/static/css/main.e61f7ad6.css.map",
-    "main.2dacbc29.js.map": "/restaurant-app/static/js/main.2dacbc29.js.map"
+    "main.3b75ae68.css.map": "/restaurant-app/static/css/main.3b75ae68.css.map",
+    "main.e51d17cf.js.map": "/restaurant-app/static/js/main.e51d17cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.e61f7ad6.css",
-    "static/js/main.2dacbc29.js"
+    "static/css/main.3b75ae68.css",
+    "static/js/main.e51d17cf.js"
   ]
 }
