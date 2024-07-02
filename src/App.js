@@ -29,7 +29,7 @@ import "./sass/components/side-bar-admin.css";
 import UpdateUser from "./pages/updateUser";
 
 function App() {
-  const user = JSON.parse(localStorage.getItem("newUser")) || "user";
+  const user = JSON.parse(localStorage.getItem("newUser"));
   return (
     <>
       {user?.role === "admin" ? (
