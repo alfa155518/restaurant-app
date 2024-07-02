@@ -45,6 +45,7 @@
           background-color: $btnAndTextColor;
         }
         img {
+          object-fit: cover;
           width: 50px;
           height: 50px;
           @include radios(50%);
@@ -97,6 +98,7 @@
         color: $btnAndTextColor;
       }
       form {
+        height: auto;
         &.secret-data {
           border-top: 1px solid $btnAndTextColor;
         }
@@ -132,8 +134,12 @@
                 height: 100%;
               }
               color: $wordsColor;
+              background: none;
             }
           }
+        }
+        .send-data {
+          margin-bottom: 30px;
         }
       }
     }

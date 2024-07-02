@@ -1,40 +1,36 @@
 import { useEffect } from "react";
 
-function useFavorite(favoriteProducts,setFavoriteProducts,notify,notifySuccessDeleted) {
-
-
+function useFavorite(
+  favoriteProducts,
+  setFavoriteProducts,
+  notify,
+  notifySuccessDeleted,
+  notifySuccessAddedToFavorite
+) {
   // When Widow Loading save data in LocalStorage
   useEffect(() => {
-    localStorage.setItem('favoriteProducts', JSON.stringify(favoriteProducts));
+    localStorage.setItem("favoriteProducts", JSON.stringify(favoriteProducts));
   }, [favoriteProducts]);
 
-  const handelFavorite = (product, notifySuccess) => {
-    setFavoriteProducts(prevProducts => {
-      // Check if the product has already been exit
-        let exit = favoriteProducts.find((productInCart) => {
-          return productInCart.id === product.id;
-        });
-        // If the product has not been exit, add it to the cart
-      if (!exit) {
-        notifySuccess()
-        return [...prevProducts, product];
-      } else {
-        notify()
-      }
-      
-      return prevProducts;
-    });
-  }
+  // Add Product to Favorite Page
+  const handelFavoriteProducts = (product) => {
+    if (favoriteProducts.some((p) => p._id === product._id)) {
+      notify();
+    } else {
+      setFavoriteProducts([...favoriteProducts, product]);
+      notifySuccessAddedToFavorite();
+    }
+  };
 
-   // Handel Remove Product
+  // Handel Remove Product
   function handelRemoveProduct(productId) {
-    const newFavoriteProducts = favoriteProducts.filter(product => product.id !== productId.id)
-    setFavoriteProducts(newFavoriteProducts)
-    notifySuccessDeleted()
+    const newFavoriteProducts = favoriteProducts.filter(
+      (product) => product._id !== productId._id
+    );
+    setFavoriteProducts(newFavoriteProducts);
+    notifySuccessDeleted();
   }
-  return (
-    [handelFavorite,handelRemoveProduct]
-  )
+  return [handelFavoriteProducts, handelRemoveProduct];
 }
 
-export default useFavorite
+export default useFavorite;

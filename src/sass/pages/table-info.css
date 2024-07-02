@@ -187,6 +187,11 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.table-info-container .reviews .review .reviewer-name {
+  color: #ffcc00;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
 .table-info-container .reviews .review .details {
   margin: 0;
   font-size: 20px;

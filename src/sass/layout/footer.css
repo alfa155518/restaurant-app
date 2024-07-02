@@ -45,6 +45,7 @@ footer .subscription form {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  height: auto;
 }
 footer .subscription form input {
   padding: 10px 42px;

@@ -326,3 +326,29 @@ a {
     margin: 10px auto;
   }
 }
+
+.no-user {
+  padding: 20px;
+  text-align: center;
+}
+.no-user h2 {
+  color: #ffcc00;
+  font-size: 35px;
+}
+.no-user p {
+  display: flex;
+  justify-content: center;
+}
+.no-user p a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  letter-spacing: 1px;
+}
+.no-user p a strong {
+  color: rgb(230, 0, 0);
+}
+.no-user p a .icon {
+  font-size: 30px;
+  color: #ffcc00;
+}

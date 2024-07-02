@@ -14,20 +14,34 @@ import useNotifiCations from "../hooks/useNotifiCations";
 import { contextProduct } from "../context/HandelCart";
 
 function Product({ products }) {
+  // console.log(products);
+  const { handelFavoriteProducts } = useContext(contextData);
+  const [notifySuccess] = useNotifiCations("success", "Product Already Added ");
 
-  const {handelFavorite} = useContext(contextData)
-  const [notifySuccess] = useNotifiCations("success","Product Already Added ")
-
-  const {handelAddProduct} = useContext(contextProduct)
+  const { handelAddProduct } = useContext(contextProduct);
   return products.map((product, index) => {
     return (
       <LazyLoad height={200} once={true} key={index}>
         <div className={`product-component`}>
-          <div className="favorite" onClick={() => handelFavorite(product,notifySuccess)}>
+          <div
+            className="favorite"
+            onClick={() => handelFavoriteProducts(product, notifySuccess)}>
             <GoHeartFill />
           </div>
           <div className="product-img">
-            <img src={product.image} alt="product-image" />
+            {product.image.includes("/restaurant") ? (
+              <img
+                src={require(`../images/menu/default-image.WebP`)}
+                alt="product-image"
+              />
+            ) : (
+              <img
+                src={require(`../images/${
+                  product.image.startsWith("popular") ? "popular" : "menu"
+                }/${product?.image}`)}
+                alt="product-image"
+              />
+            )}
           </div>
           <div className="ratings roboto-black">
             {product.rating === "5" && (
@@ -62,14 +76,14 @@ function Product({ products }) {
           <p className="desc roboto-bold-italic">{product.desc}</p>
           <strong className="price roboto-black">{product.price}</strong>
           <ul className="actions">
-            <Link to={'/info'}>
-            <li className="eye">
+            <Link to={"/info"}>
+              <li className="eye">
                 <FaEye />
-            </li>
+              </li>
             </Link>
             <li className="cart" onClick={() => handelAddProduct(product)}>
-                <BsCart4 />
-                <span>Add To Cart</span>
+              <BsCart4 />
+              <span>Add To Cart</span>
             </li>
           </ul>
         </div>

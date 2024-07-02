@@ -111,14 +111,39 @@
 .navbar-layout nav .actions .sing-up:hover {
   background: rgb(146, 3, 3);
 }
+.navbar-layout nav .actions .profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 .navbar-layout nav .actions .profile a img {
-  width: 40px;
-  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.navbar-layout nav .actions .profile .logout {
+  background: rgb(230, 0, 0);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -ms-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+}
+.navbar-layout nav .actions .profile .logout:hover {
+  background: rgb(146, 3, 3);
 }
 @media (max-width: 1100px) {
   .navbar-layout nav .call-us {
@@ -187,6 +212,9 @@
     flex-direction: column;
   }
   .navbar-layout nav .actions {
+    flex-direction: column;
+  }
+  .navbar-layout nav .actions .profile {
     flex-direction: column;
   }
   .navbar-layout nav .container-links {

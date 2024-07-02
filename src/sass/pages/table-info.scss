@@ -37,7 +37,7 @@
       color: $btnAndTextColor;
       z-index: 1;
       text-transform: capitalize;
-      @include transform(-50%,-50%)
+      @include transform(-50%, -50%);
     }
   }
   // All Details About Table
@@ -143,6 +143,11 @@
           object-fit: contain;
           @include radios(50%);
         }
+      }
+      .reviewer-name {
+        color: $btnAndTextColor;
+        font-size: 25px;
+        letter-spacing: 1px;
       }
       .details {
         margin: 0;

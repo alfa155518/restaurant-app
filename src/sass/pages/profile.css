@@ -59,6 +59,8 @@
   background-color: #ffcc00;
 }
 .profile-wrapper .profile-content .side-bar .user-photo img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -110,6 +112,9 @@
 .profile-wrapper .profile-content .content h2 {
   color: #ffcc00;
 }
+.profile-wrapper .profile-content .content form {
+  height: auto;
+}
 .profile-wrapper .profile-content .content form.secret-data {
   border-top: 1px solid #ffcc00;
 }
@@ -143,9 +148,13 @@
 }
 .profile-wrapper .profile-content .content form .form-group label:hover {
   color: rgb(255, 255, 255);
+  background: none;
 }
 .profile-wrapper .profile-content .content form .form-group label:hover::after {
   height: 100%;
+}
+.profile-wrapper .profile-content .content form .send-data {
+  margin-bottom: 30px;
 }
 @media (max-width: 772px) {
   .profile-wrapper .profile-content .side-bar {

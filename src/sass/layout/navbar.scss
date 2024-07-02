@@ -48,7 +48,7 @@
             width: 0;
             height: 2px;
             bottom: -2px;
-            @include transform(-50%,-50%);
+            @include transform(-50%, -50%);
             @include transition(0.5s, ease-in-out);
           }
           &:hover {
@@ -106,11 +106,29 @@
         }
       }
       .profile {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
         a {
           img {
-            width: 40px;
-            height: 40px;
+            object-fit: cover;
+            width: 50px;
+            height: 50px;
             @include radios(50%);
+          }
+        }
+        .logout {
+          background: $mainColor;
+          color: $wordsColor;
+          text-align: center;
+          padding: 5px 20px;
+          border-radius: 25px;
+          border: none;
+          cursor: pointer;
+          @include transition(1s, ease-in-out);
+          &:hover {
+            background: rgb(146, 3, 3);
           }
         }
       }
@@ -180,6 +198,9 @@
       flex-direction: column;
       .actions {
         flex-direction: column;
+        .profile {
+          flex-direction: column;
+        }
       }
       .container-links {
         width: 75% !important;
