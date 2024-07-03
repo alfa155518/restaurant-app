@@ -33,7 +33,7 @@ function App() {
   const user = "admin";
   return (
     <>
-      {user?.role === "admin" ? (
+      {user === "admin" ? (
         <AdminManageMent>
           <div className="main">
             <Routes>
