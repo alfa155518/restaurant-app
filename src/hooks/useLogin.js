@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast, Zoom } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-function useLogin() {
+function useLogin({ admin }, { setAdmin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -12,9 +12,6 @@ function useLogin() {
       transition: Zoom,
       type: status,
     });
-
-  let token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjY4NGU0Yzg4NDlmNmIyYzJmYjk5MjcyIiwiaWF0IjoxNzE5OTg1MzUzLCJleHAiOjE3Mjc3NjEzNTN9.1FPQeX8OWMKf97eNkTtZflpEuaBTpQ3Zg33Cgv7Iv1Y";
 
   // Send login email and password by form data
   const handelLogin = async (e) => {
@@ -31,11 +28,7 @@ function useLogin() {
         {
           headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${
-              localStorage.getItem("uToken")
-                ? localStorage.getItem("uToken")
-                : token
-            }`,
+            authorization: `Bearer ${localStorage.getItem("uToken")}`,
           },
         }
       )
@@ -51,10 +44,11 @@ function useLogin() {
             navigate("/");
           }, 3000);
         }
+        return setAdmin(data.data);
       })
       .catch((err) => {
-        console.log(err.response.data);
-        notify("error", err.response.data.message);
+        console.log(err?.response?.data);
+        notify("error", err?.response?.data?.message);
       })
       .finally(() => {
         setLoading(false);

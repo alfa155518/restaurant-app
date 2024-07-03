@@ -22,19 +22,20 @@ import MenuManagement from "./pages/menuManagement";
 import OrderManagement from "./pages/orderManagement";
 import ReservationManagement from "./pages/reservationManagement";
 import EmployeesManagement from "./pages/EmployeesManagement";
-import AdminManageMent from "./context/AdminManageMent";
+import AdminManageMent, { contextAdmin } from "./context/AdminManageMent";
 import AddProduct from "./pages/addProduct";
 import "react-toastify/dist/ReactToastify.css";
 import "./sass/components/side-bar-admin.css";
 import UpdateUser from "./pages/updateUser";
+import { useState } from "react";
 
 function App() {
-  // const user = JSON.parse(localStorage.getItem("newUser"));
-  const user = "admin";
+  const [admin, setAdmin] = useState("");
   return (
-    <>
-      {user === "admin" ? (
-        <AdminManageMent>
+    <AdminManageMent>
+      {}
+      <>
+        {admin && admin?.existingUser?.role === "admin" ? (
           <div className="main">
             <Routes>
               <Route element={<DashboardContainer />}>
@@ -54,48 +55,51 @@ function App() {
               </Route>
             </Routes>
           </div>
-        </AdminManageMent>
-      ) : (
-        <HandelProducts>
-          <ManageTable>
-            <HandelCart>
-              <div className="main">
-                <Routes>
-                  <Route path="signup" element={<SingUp />} />
-                  <Route path="login" element={<Login />} />
-                  <Route path="/" element={<Home />} />
-                  <Route path="profile" element={<Profile />} />
-                  <Route path="menu" element={<Menu />} />
-                  <Route path="profile" element={<Profile />} />
-                  <Route path="menu" element={<Menu />} />
-                  <Route path="cart" element={<Cart />} />
-                  <Route path="tables" element={<Tables />} />
-                  <Route path="tables/:infoId" element={<TableInfo />} />
-                  <Route path="my-bookings" element={<MyBookings />} />
-                  <Route path="about-us" element={<AboutUs />} />
-                  <Route path="contact-us" element={<ContactUs />} />
-                  <Route path="services" element={<Services />} />
-                  <Route path="favorite" element={<Favorite />} />
-                </Routes>
-              </div>
-            </HandelCart>
-          </ManageTable>
-        </HandelProducts>
-      )}
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        limit={1}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-    </>
+        ) : (
+          <HandelProducts>
+            <ManageTable>
+              <HandelCart>
+                <div className="main">
+                  <Routes>
+                    <Route path="signup" element={<SingUp />} />
+                    <Route
+                      path="login"
+                      element={<Login admin={admin} setAdmin={setAdmin} />}
+                    />
+                    <Route path="/" element={<Home />} />
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="menu" element={<Menu />} />
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="menu" element={<Menu />} />
+                    <Route path="cart" element={<Cart />} />
+                    <Route path="tables" element={<Tables />} />
+                    <Route path="tables/:infoId" element={<TableInfo />} />
+                    <Route path="my-bookings" element={<MyBookings />} />
+                    <Route path="about-us" element={<AboutUs />} />
+                    <Route path="contact-us" element={<ContactUs />} />
+                    <Route path="services" element={<Services />} />
+                    <Route path="favorite" element={<Favorite />} />
+                  </Routes>
+                </div>
+              </HandelCart>
+            </ManageTable>
+          </HandelProducts>
+        )}
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          limit={1}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+      </>
+    </AdminManageMent>
   );
 }
 
