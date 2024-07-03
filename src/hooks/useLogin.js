@@ -13,6 +13,9 @@ function useLogin() {
       type: status,
     });
 
+  let token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjY4NGU0Yzg4NDlmNmIyYzJmYjk5MjcyIiwiaWF0IjoxNzE5OTg1MzUzLCJleHAiOjE3Mjc3NjEzNTN9.1FPQeX8OWMKf97eNkTtZflpEuaBTpQ3Zg33Cgv7Iv1Y";
+
   // Send login email and password by form data
   const handelLogin = async (e) => {
     e.preventDefault();
@@ -28,7 +31,11 @@ function useLogin() {
         {
           headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${localStorage.getItem("uToken")}`,
+            authorization: `Bearer ${
+              localStorage.getItem("uToken")
+                ? localStorage.getItem("uToken")
+                : token
+            }`,
           },
         }
       )
