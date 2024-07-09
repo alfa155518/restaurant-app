@@ -12,12 +12,12 @@ function UpdateUser() {
     setLastName,
     setEmail,
     handleUpdateUser,
-    updatedData,
+    loading,
   } = useUpdateUser();
 
   return (
     <>
-      {updatedData.length <= 0 ? (
+      {loading ? (
         <Loader />
       ) : (
         <form>

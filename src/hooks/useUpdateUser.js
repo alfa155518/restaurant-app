@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Zoom, toast } from "react-toastify";
+
+import useNotifiCations from "./useNotifiCations";
 
 function useUpdateUser() {
   const { userId } = useParams();
@@ -9,18 +10,21 @@ function useUpdateUser() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [updatedData, setUpdatedData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Handel Notifications
-  const notify = (status, message) =>
-    toast(message, {
-      transition: Zoom,
-      type: status,
-    });
+  // Handle Notifications
+  const [notifySuccess] = useNotifiCations(
+    "success",
+    "User Updated Successfully"
+  );
+  const [notifyError] = useNotifiCations("error", "User Not Updated");
+  const [notifyNotFound] = useNotifiCations("error", "User Not FoundUpdated");
 
-  // Get Target User
+  // 2) Get Target User
   const getTargetUser = async () => {
     try {
+      setLoading(true);
       const response = await axios.get(
         `http://localhost:8000/api/v1/admin/users/user/${userId}`,
         {
@@ -31,20 +35,24 @@ function useUpdateUser() {
         }
       );
       const data = await response.data.selectedUser;
-      setFirstName(data.firstName);
-      setLastName(data.lastName);
-      setEmail(data.email);
+      if (response.status === 200) {
+        setFirstName(data.firstName);
+        setLastName(data.lastName);
+        setEmail(data.email);
+      }
     } catch (error) {
-      notify("error", error.response.message);
+      notifyNotFound();
+    } finally {
+      setLoading(false);
     }
   };
 
-  // Get Data continuously
+  // 3) Get Data continuously
   useEffect(() => {
     getTargetUser();
   }, [userId]);
 
-  // Update Data continuously
+  // 4) Update Data continuously
   useEffect(() => {
     setUpdatedData(() => {
       return {
@@ -55,11 +63,12 @@ function useUpdateUser() {
     });
   }, [firstName, email, lastName]);
 
-  // Make patch request by axios to update firstName and lastName and email
+  // 5) Make patch request by axios to update firstName and lastName and email
   const handleUpdateUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(
+      setLoading(true);
+      const response = await axios.patch(
         `http://localhost:8000/api/v1/admin/users/update/${userId}`,
         updatedData,
         {
@@ -69,10 +78,14 @@ function useUpdateUser() {
           },
         }
       );
-      notify("success", "User updated successfully");
-      navigate(-1);
+      if (response.status === 201) {
+        notifySuccess();
+        navigate(-1);
+      }
     } catch (error) {
-      notify("error", error.response.data.error);
+      notifyError();
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,6 +98,7 @@ function useUpdateUser() {
     setEmail,
     handleUpdateUser,
     updatedData,
+    loading,
   };
 }
 

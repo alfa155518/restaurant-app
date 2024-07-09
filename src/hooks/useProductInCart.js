@@ -30,9 +30,13 @@ function useProductInCart(
 
   // Handle Increase quantity Product Number
   const handelPlusProductNumber = (product) => {
-    const index = productInCart.findIndex((item) => item._id === product._id);
-    productInCart[index].quantity += 1;
-    setProductInCart([...productInCart]);
+    const targetProduct = productInCart.find(
+      (item) => item._id === product._id
+    );
+    if (targetProduct) {
+      targetProduct.quantity++;
+      return setProductInCart([...productInCart]);
+    }
   };
 
   // Handle Decrease quantity Product Number

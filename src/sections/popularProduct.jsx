@@ -12,13 +12,13 @@ function PopularProduct() {
   const { popularProducts, setPopularProducts } = useContext(contextData);
   // 1) Get Data And Show it
   async function getPopularProducts() {
-    await setPopularProducts(products);
     try {
+      await setPopularProducts("");
       const response = await axios.get(
         "http://localhost:8000/api/v1/popularProducts"
       );
       const data = await response?.data?.popularProducts;
-      await setPopularProducts(data);
+      return setPopularProducts(data);
     } catch (error) {
       console.error(
         "There has been a problem with your fetch operation:",
@@ -45,7 +45,11 @@ function PopularProduct() {
         className={`popular-wrapper ${
           inView ? "animate__animated animate__zoomIn" : ""
         }`}>
-        <Product products={popularProducts} />
+        {popularProducts.length <= 0 ? (
+          <Product products={products} />
+        ) : (
+          <Product products={popularProducts} />
+        )}
       </section>
       <Link to={"/"} className="more-products roboto-bold">
         Explore More

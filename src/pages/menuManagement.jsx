@@ -1,64 +1,90 @@
-import { useContext } from "react"
-import { contextAdmin } from "../context/AdminManageMent"
 import { RiDeleteBinFill } from "react-icons/ri";
-import { FaEdit } from "react-icons/fa";
-
-import "../sass/pages/menu-management.css"
-import MenuCharts from "../charts/menuCharts";
 import LazyLoad from "react-lazyload";
+import { FaEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Loader from "../components/loader";
+import MenuCharts from "../charts/menuCharts";
+import ScrollToTop from "../components/scrollToTop";
+import useMenuProducts from "../hooks/useMenuProducts";
+import "../sass/pages/menu-management.css";
 function MenuManagement() {
-  const {allProducts} = useContext(contextAdmin)
-
+  // Costume Hook For handel Products in menu
+  const { menuProducts, handelDeleteProduct, loading } = useMenuProducts();
   return (
     <section className="menu-management-container">
-      {
-        allProducts.length === 0 ? <h2>There Is No Products </h2>
-        :
+      {loading ? (
+        <Loader />
+      ) : (
         <>
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Desc</th>
-              <th>Type</th>
-              <th>ِActions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              allProducts.map((product,i) => {
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Desc</th>
+                <th>Type</th>
+                <th>ِActions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {menuProducts.map((product, i) => {
+                const defaultImagePath = require(`../images/menu/default-image.WebP`);
+                let imagePath = defaultImagePath;
+                try {
+                  // Assuming the API response contains the image path
+                  imagePath = require(`../images/menu/${product?.image}`);
+                } catch (error) {
+                  // Handle the error if the image file does not exist
+                  console.error(`Image not found: ${product?.image}`);
+                }
                 return (
                   <tr key={i}>
                     <td>
                       <LazyLoad height={100} offset={100}>
-                      <img src={product.image} alt="product-img"/>
+                        <img
+                          src={imagePath}
+                          alt="product img"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = defaultImagePath;
+                          }}
+                        />
                       </LazyLoad>
-                      </td>
+                    </td>
                     <td className="name">{product.name}</td>
                     <td className="price">{product.price}</td>
-                    <td className="description">{product.desc}</td>
-                    <td className="type">{product.type}</td>
+                    <td className="description">{product.description}</td>
+                    <td className="type">{product.category}</td>
                     <td className="actions">
-                      <button className="update" aria-label="btn update product"><FaEdit/></button>
-                      <button className="delete" aria-label="btn delete product"><RiDeleteBinFill/></button>
+                      <button
+                        className="update"
+                        aria-label="btn update product">
+                        <Link to={`/updateProduct/${product._id}`}>
+                          <FaEdit />
+                        </Link>
+                      </button>
+                      <button
+                        className="delete"
+                        aria-label="btn delete product"
+                        onClick={(e) => handelDeleteProduct(e, product)}>
+                        <RiDeleteBinFill />
+                      </button>
                     </td>
                   </tr>
-                )
-              })
-            }
-          </tbody>
-        </table>
-        <button className='btn-add-product roboto-black'>
-      <Link to="/add-product">Add Product</Link>
-    </button>
-        <MenuCharts/>
-      </>
-      }
+                );
+              })}
+            </tbody>
+          </table>
+          <button className="btn-add roboto-black">
+            <Link to="/add-product">Add Product</Link>
+          </button>
+          <MenuCharts />
+        </>
+      )}
+      <ScrollToTop />
     </section>
-  )
+  );
 }
 
-export default MenuManagement
+export default MenuManagement;

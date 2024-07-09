@@ -1,21 +1,43 @@
-
-import "../sass/pages/add-product.css";
+import ScrollToTop from "../components/scrollToTop";
+import Loader from "../components/loader";
+import "../sass/components/add-any-thing.css";
+import useAddProduct from "../hooks/useAddProduct";
 
 function AddProduct() {
+  // Costume Hook for adding product
+  const {
+    handleSubmitAddProduct,
+    name,
+    setName,
+    description,
+    setDescription,
+    price,
+    setPrice,
+    image,
+    setImage,
+    category,
+    setCategory,
+    loading,
+  } = useAddProduct();
   return (
-    <form>
-      <h2 className="roboto-black">Add Product Page</h2>
-      <div className="form-container">
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <form>
+          <h2 className="roboto-black">Add Product Page</h2>
+          <div className="form-container">
             <>
-            <label htmlFor="image" className=" roboto-bold">Upload Img</label>
-            <input
-              className="default-input"
-              type="file"
-              id="image"
-              placeholder="image"
-              required
+              <input
+                className="default-input"
+                type="text"
+                id="image"
+                placeholder="enter your just End of image: pizza-1.WebP"
+                required
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
               />
-              </>
+            </>
             <input
               autoFocus
               className="default-input"
@@ -25,6 +47,8 @@ function AddProduct() {
               placeholder="Product Name"
               required
               autoComplete="any name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             <input
               className="default-input"
@@ -34,6 +58,8 @@ function AddProduct() {
               placeholder="Price"
               required
               autoComplete="Price any thing"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
             />
             <input
               className="default-input"
@@ -42,23 +68,36 @@ function AddProduct() {
               id="desc"
               autoComplete="desc any thing"
               placeholder="Description"
+              required
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
-            <select className="roboto-bold-italic">
+            <select
+              className="roboto-bold-italic"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}>
               <option value="type">type</option>
               <option value="pizza">pizza</option>
-              <option value="burger">burger</option>
+              <option value="burgers">burger</option>
               <option value="drinks">drinks</option>
               <option value="combes">combes</option>
-              <option value="sandwich">sandwich</option>
+              <option value="sandwiches">sandwich</option>
               <option value="pasta">pasta</option>
               <option value="fries">fries</option>
             </select>
           </div>
-          <button type="submit" className="send-data" aria-label="send data">
+          <button
+            type="submit"
+            className="send-data"
+            aria-label="send data"
+            onClick={(e) => handleSubmitAddProduct(e)}>
             Add Product
           </button>
-    </form>
-  )
+        </form>
+      )}
+      <ScrollToTop />
+    </>
+  );
 }
 
-export default AddProduct
+export default AddProduct;

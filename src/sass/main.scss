@@ -330,3 +330,27 @@ a {
     }
   }
 }
+
+.btn-add {
+  background-color: $tableMainColor;
+  text-align: center;
+  display: block;
+  padding: 7px 40px;
+  margin: 50px auto;
+  outline: none;
+  border: none;
+  @include radios(25px);
+  @include transition(0.5s, ease-in-out);
+  &:hover {
+    background-color: $btnAndTextColor;
+    color: $btnAndTextColor;
+    scale: 1.1;
+  }
+  a {
+    color: $wordsColor;
+    font-size: 22px;
+  }
+  @media (max-width: 772px) {
+    width: 650px;
+  }
+}

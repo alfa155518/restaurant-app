@@ -2,7 +2,7 @@
 @use "../helpers/variables" as *;
 
 .menu-management-container {
-  @include center-section(60px,10px,70px,5px);
+  @include center-section(60px, 10px, 70px, 5px);
   table {
     @include centerTable($wordsColor);
     @include thead($wordsColor);
@@ -31,25 +31,9 @@
       }
     }
   }
-  .btn-add-product {
-    background-color: $btnAndTextColor;
-    text-align: center;
-    display: block;
-    padding: 7px 40px;
-    margin: 50px auto;
-    outline: none;
-    border: none;
-    @include radios(25px);
-    a {
-      color: $wordsColor;
-      font-size: 22px;
-    }
-    @media (max-width:772px) {
-      width: 650px;
-    }
-  }
+
   .menu-charts {
-    @media (max-width:772px) {
+    @media (max-width: 772px) {
       width: 650px;
     }
   }

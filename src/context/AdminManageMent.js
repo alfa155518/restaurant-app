@@ -1,18 +1,23 @@
 import { createContext, useState } from "react";
-
-import allProducts from "../api/allProduct";
-
+import admin_Image from "../images/users/default-admin.WebP";
 export const contextAdmin = createContext({});
-
 function AdminManageMent({ children }) {
   const [showSideBar, setShowSideBar] = useState(false);
   const [admin, setAdmin] = useState("");
-
-  const [orderProducts, setOrderProducts] = useState([]);
-
+  const [menuProducts, setMenuProducts] = useState([]);
+  const adminInfo = JSON.parse(localStorage.getItem("newUser"));
+  const adminPhoto = adminInfo?.photo?.url || admin_Image;
   return (
     <contextAdmin.Provider
-      value={{ showSideBar, setShowSideBar, allProducts, admin, setAdmin }}>
+      value={{
+        showSideBar,
+        setShowSideBar,
+        admin,
+        setAdmin,
+        menuProducts,
+        setMenuProducts,
+        adminPhoto,
+      }}>
       {children}
     </contextAdmin.Provider>
   );

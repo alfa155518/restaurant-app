@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast, Zoom } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-function useLogin({ admin }, { setAdmin }) {
+function useLogin({ setAdmin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);

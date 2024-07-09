@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import HandelProducts from "./context/HandelProducts";
@@ -22,26 +23,35 @@ import MenuManagement from "./pages/menuManagement";
 import OrderManagement from "./pages/orderManagement";
 import ReservationManagement from "./pages/reservationManagement";
 import EmployeesManagement from "./pages/EmployeesManagement";
-import AdminManageMent, { contextAdmin } from "./context/AdminManageMent";
+import AdminManageMent from "./context/AdminManageMent";
 import AddProduct from "./pages/addProduct";
+import UpdateUser from "./pages/updateUser";
+import UpdateProduct from "./pages/updateProduct";
+import UpdateEmployee from "./pages/updateEmployee";
 import "react-toastify/dist/ReactToastify.css";
 import "./sass/components/side-bar-admin.css";
-import UpdateUser from "./pages/updateUser";
-import { useState } from "react";
+import AddEmployee from "./pages/addEmployee";
 
 function App() {
   const [admin, setAdmin] = useState("");
+  if (admin) {
+    localStorage.setItem("role", admin?.existingUser?.role);
+  }
   return (
     <AdminManageMent>
-      {}
       <>
-        {admin && admin?.existingUser?.role === "admin" ? (
+        {localStorage.getItem("role") === "admin" ? (
           <div className="main">
             <Routes>
               <Route element={<DashboardContainer />}>
                 <Route index element={<UserManagement />} />
                 <Route path="updateUser/:userId" element={<UpdateUser />} />
                 <Route path="menu-management" element={<MenuManagement />} />
+                <Route
+                  path="updateProduct/:productId"
+                  element={<UpdateProduct />}
+                />
+                <Route path="add-product" element={<AddProduct />} />
                 <Route path="order-management" element={<OrderManagement />} />
                 <Route
                   path="reservation-management"
@@ -51,7 +61,11 @@ function App() {
                   path="employees-management"
                   element={<EmployeesManagement />}
                 />
-                <Route path="add-product" element={<AddProduct />} />
+                <Route
+                  path="employees-management/updateEmployee/:employeeId"
+                  element={<UpdateEmployee />}
+                />
+                <Route path="add-employee" element={<AddEmployee />} />
               </Route>
             </Routes>
           </div>

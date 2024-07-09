@@ -6,10 +6,10 @@ import Loader from "../components/loader";
 import useLogin from "../hooks/useLogin";
 import "../sass/pages/login.css";
 
-function Login({ admin, setAdmin }) {
+function Login({ setAdmin }) {
   //Costume Hook Login
   const [email, setEmail, password, setPassword, loading, handelLogin] =
-    useLogin((admin = { admin }), (setAdmin = { setAdmin }));
+    useLogin((setAdmin = { setAdmin }));
   return (
     <>
       {loading ? (
