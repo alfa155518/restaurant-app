@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/restaurant-app/static/css/main.3b75ae68.css",
-    "main.js": "/restaurant-app/static/js/main.151e350e.js",
+    "main.css": "/restaurant-app/static/css/main.e060d005.css",
+    "main.js": "/restaurant-app/static/js/main.336c9bcd.js",
     "static/media/info-5.WebP": "/restaurant-app/static/media/info-5.d7e3b8b79769ea2ed032.WebP",
     "static/media/info-11.WebP": "/restaurant-app/static/media/info-11.ebc2979fb5186767ba54.WebP",
     "static/media/info-9.WebP": "/restaurant-app/static/media/info-9.0958833a2532a59d4737.WebP",
@@ -153,14 +153,15 @@
     "static/media/hot-pepper.WebP": "/restaurant-app/static/media/hot-pepper.bc793ae9433ef6982c6b.WebP",
     "static/media/439771693_789249223132590__n.WebP": "/restaurant-app/static/media/439771693_789249223132590_394557324656325282_n.64ebc00b9d20b3c6c86f.WebP",
     "static/media/logo.WebP": "/restaurant-app/static/media/logo.bbdaaa34654aff804cc3.WebP",
+    "static/media/default-admin.WebP": "/restaurant-app/static/media/default-admin.c4273e76b8fbd44ea128.WebP",
     "static/media/default.WebP": "/restaurant-app/static/media/default.84fa46fb9bf3bceb700b.WebP",
     "static/media/user-12.WebP": "/restaurant-app/static/media/user-12.d42d68a9522c4dbd2999.WebP",
     "index.html": "/restaurant-app/index.html",
-    "main.3b75ae68.css.map": "/restaurant-app/static/css/main.3b75ae68.css.map",
-    "main.151e350e.js.map": "/restaurant-app/static/js/main.151e350e.js.map"
+    "main.e060d005.css.map": "/restaurant-app/static/css/main.e060d005.css.map",
+    "main.336c9bcd.js.map": "/restaurant-app/static/js/main.336c9bcd.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b75ae68.css",
-    "static/js/main.151e350e.js"
+    "static/css/main.e060d005.css",
+    "static/js/main.336c9bcd.js"
   ]
 }
