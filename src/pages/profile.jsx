@@ -1,7 +1,6 @@
 import { IoSettings } from "react-icons/io5";
 import { BiSolidBookmarks } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
-import { FaCcMastercard } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -79,7 +78,9 @@ function Profile() {
                 </div>
                 <div className="user-photo">
                   <img src={userPhoto} alt="user" />
-                  <strong className="user-name roboto-bold">Alfa</strong>
+                  <strong className="user-name roboto-bold">
+                    {userFirstName}
+                  </strong>
                 </div>
                 <ul className="links">
                   <li>
@@ -98,12 +99,6 @@ function Profile() {
                     <Link to="/favorite">
                       <FaStar />
                       <span>Favorites</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/payment">
-                      <FaCcMastercard />
-                      <span>Payments</span>
                     </Link>
                   </li>
                 </ul>

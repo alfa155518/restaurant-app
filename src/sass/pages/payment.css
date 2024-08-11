@@ -1,0 +1,22 @@
+.payment-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.payment-page h1 {
+  color: rgb(76, 175, 80);
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+.payment-page p {
+  color: rgb(255, 204, 0);
+  font-size: 20px;
+}
+.payment-page a {
+  text-align: center;
+  background-color: rgb(76, 175, 80);
+}

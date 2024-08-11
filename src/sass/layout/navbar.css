@@ -156,7 +156,7 @@
     background-color: rgb(34, 34, 34);
     height: 1000vh;
     width: 44%;
-    left: 100%;
+    left: 150%;
     top: 0;
     display: flex;
     right: 39px;
@@ -175,7 +175,7 @@
   .navbar-layout nav .container-links .links {
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.2588235294);
-    width: 87%;
+    width: 100%;
     align-items: flex-start;
   }
   .navbar-layout nav .container-links .links li {
@@ -184,7 +184,6 @@
     border-bottom: 1px solid rgb(230, 0, 0);
     width: 95%;
     position: relative;
-    right: 30px;
   }
   .navbar-layout nav .container-links .links li::after {
     display: none;
@@ -198,7 +197,7 @@
     width: 55% !important;
   }
   .navbar-layout .container-links .links {
-    width: 85% !important;
+    width: 100% !important;
   }
   .navbar-layout .appear {
     left: 45% !important;

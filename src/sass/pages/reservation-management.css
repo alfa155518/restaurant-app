@@ -47,10 +47,17 @@
   font-size: 32px;
 }
 .reservation-management-container table tbody tr td.price {
-  color: #ffcc00;
+  color: rgb(255, 204, 0);
+  font-size: 18px;
+  font-weight: 900;
+}
+.reservation-management-container table tbody tr td.customer-name, .reservation-management-container table tbody tr td.customer-phone {
+  color: rgb(255, 204, 0);
+  text-transform: capitalize;
+  font-size: 19px;
+  font-weight: 900;
 }
 .reservation-management-container table tbody tr td.status span {
-  background-color: green;
   padding: 3px 10px;
   border-radius: 25px;
   -webkit-border-radius: 25px;
@@ -58,7 +65,7 @@
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
 }
-.reservation-management-container table tbody tr td.btn-cancel button {
+.reservation-management-container table tbody tr td.btn-cancel button, .reservation-management-container table tbody tr td.btn-update button {
   color: rgb(255, 255, 255);
   padding: 6px 27px;
   background-color: rgb(230, 0, 0);
@@ -77,6 +84,12 @@
   -ms-transition: 0.5s ease-in;
   -o-transition: 0.5s ease-in;
 }
-.reservation-management-container table tbody tr td.btn-cancel button:hover {
+.reservation-management-container table tbody tr td.btn-cancel button:hover, .reservation-management-container table tbody tr td.btn-update button:hover {
   background-color: #ffcc00;
+}
+.reservation-management-container table tbody tr td.btn-update button {
+  background-color: #ffcc00;
+}
+.reservation-management-container table tbody tr td.btn-update button:hover {
+  background-color: rgb(76, 175, 80);
 }

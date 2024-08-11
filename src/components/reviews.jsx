@@ -45,10 +45,12 @@ function Reviews({ tableName }) {
             <div className="review" key={i}>
               <LazyLoad height={200} once={true}>
                 <div className="user-img">
-                  <img src={review.reviewer.photo.url} alt="user-img" />
+                  <img src={review.reviewer?.photo.url} alt="user-img" />
                 </div>
               </LazyLoad>
-              <h3 className="reviewer-name roboto-black ">{review.reviewer.firstName}</h3>
+              <h3 className="reviewer-name roboto-black ">
+                {review.reviewer?.firstName}
+              </h3>
               <div className="details">{review.review}</div>
               <ul className="ratings">
                 {review?.rating === "5" && (

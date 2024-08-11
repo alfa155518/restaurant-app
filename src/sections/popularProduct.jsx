@@ -51,7 +51,7 @@ function PopularProduct() {
           <Product products={popularProducts} />
         )}
       </section>
-      <Link to={"/"} className="more-products roboto-bold">
+      <Link to={"menu"} className="more-products roboto-bold">
         Explore More
       </Link>
     </>

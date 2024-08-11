@@ -14,7 +14,9 @@ function SideBarAdmin() {
     <aside className={showSideBar ? "active-admin-side-bar" : ""}>
       <div
         className="close-bar"
-        onClick={() => setShowSideBar(() => !showSideBar)}>
+        onClick={() => {
+          setShowSideBar(() => !showSideBar);
+        }}>
         <IoMdClose />
       </div>
       <ul className="side-bar-admin">

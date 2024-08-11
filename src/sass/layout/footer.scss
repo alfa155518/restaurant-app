@@ -2,8 +2,9 @@
 @use "../helpers/variables" as *;
 
 footer {
-  @include center-section(100px, 10px, 60px, 10px);
+  @include center-section(100px, 10px, 300px, 10px);
   @include bg-section();
+  margin-bottom: 0;
   .subscription {
     display: flex;
     align-items: center;

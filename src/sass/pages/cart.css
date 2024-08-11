@@ -61,6 +61,11 @@
   color: #ffcc00;
   font-size: 20px;
 }
+.cart-container table tbody tr td.checkout button {
+  font-size: 15px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .cart-container .total-price {
   font-family: "Roboto", sans-serif;
   color: rgb(255, 255, 255);

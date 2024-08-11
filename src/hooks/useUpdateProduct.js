@@ -77,7 +77,6 @@ function useUpdateProduct() {
         navigate(-1);
       }
     } catch (err) {
-      console.error(err);
       notifyError();
     } finally {
       setLoading(false);

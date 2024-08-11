@@ -32,7 +32,6 @@ const useLogOut = (setLoading) => {
         }
       })
       .catch((err) => {
-        console.log(err);
         notify("error", err.response.data.message);
       })
       .finally(() => {

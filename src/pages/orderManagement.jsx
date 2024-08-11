@@ -1,41 +1,27 @@
+import { useContext, useEffect } from "react";
+import { FaTrashAlt } from "react-icons/fa";
+import { TbWriting } from "react-icons/tb";
 import LazyLoad from "react-lazyload";
 import OrderChart from "../charts/orderCharts";
-import "../sass/pages/order-management.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Loader from "../components/loader";
 import ScrollToTop from "../components/scrollToTop";
+import "../sass/pages/order-management.css";
+import { orderContext } from "../context/orderManagement";
 
 function OrderManagement() {
-  const [orderProducts, setOrderProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // Order Context
+  const {
+    orderProducts,
+    getAllOrderProducts,
+    loading,
+    updateOrderStatus,
+    deleteOrder,
+  } = useContext(orderContext);
 
-  const getAllOrderProducts = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get("http://localhost:8000/api/v1/orders/", {
-        headers: {
-          authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
-
-      const data = await response.data.orders;
-      setOrderProducts(() => {
-        return [...data];
-      });
-      console.log(data);
-    } catch (err) {
-      console.error("Failed to fetch order products");
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  // get all order products
   useEffect(() => {
     getAllOrderProducts();
   }, []);
-
-  console.log(orderProducts);
   return (
     <>
       {loading ? (
@@ -55,37 +41,76 @@ function OrderManagement() {
                     <th>Total Price</th>
                     <th>Quantity</th>
                     <th>Status</th>
+                    <th>Customer Name</th>
+                    <th>Customer Phone</th>
+                    <th>Customer Email</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {orderProducts.map((product) => {
-                    return product.order.map((order) => {
-                      return (
-                        <tr key={order._id}>
-                          <td className="product-img">
-                            <LazyLoad>
-                              <img
-                                src={require(`../images/${
-                                  order.image.startsWith("popular")
-                                    ? "popular"
-                                    : "menu"
-                                }/${order.image}`)}
-                                alt="product-img"
-                              />
-                            </LazyLoad>
-                          </td>
-                          <td className="name  roboto-black">{order.name}</td>
-                          <td className="description roboto-black-italic">
-                            {order.description}
-                          </td>
-                          <td className="price">{order.totalPrice}</td>
-                          <td className="quantity">{order.quantity}</td>
-                          <td className="status">
-                            <span>{product.status}</span>
-                          </td>
-                        </tr>
-                      );
-                    });
+                  {orderProducts.map((order) => {
+                    return (
+                      <tr key={order._id}>
+                        <td className="product-img">
+                          <LazyLoad>
+                            <img
+                              src={require(`../images/${
+                                order.product.image.startsWith("popular")
+                                  ? "popular"
+                                  : "menu"
+                              }/${order.product.image}`)}
+                              alt="product-img"
+                            />
+                          </LazyLoad>
+                        </td>
+                        <td className="name  roboto-black">
+                          {order.product.name}
+                        </td>
+                        <td className="description roboto-black-italic">
+                          {order.product.description}
+                        </td>
+                        <td className="price">
+                          $
+                          {order.quantity *
+                            parseInt(order.product.price.replace(/\$/g, ""))}
+                        </td>
+                        <td className="quantity">{order.quantity}</td>
+                        <td className="status">
+                          <span
+                            style={{
+                              backgroundColor:
+                                order.orderStatus === "confirmed" &&
+                                `rgb(76, 175, 80)`,
+                            }}>
+                            {order.orderStatus}
+                          </span>
+                        </td>
+                        <td className="customer-name">
+                          <span>{order.customer.firstName}</span>
+                        </td>
+                        <td className="customer-phone">
+                          <span>{order.customer.phone}</span>
+                        </td>
+                        <td className="customer-email">
+                          <span>{order.customer.email}</span>
+                        </td>
+                        <td className="actions">
+                          <button
+                            className="delete"
+                            onClick={(e) => deleteOrder(e, order)}>
+                            <FaTrashAlt />
+                          </button>
+                          <button
+                            onClick={(e) => updateOrderStatus(e, order)}
+                            className={`update ${
+                              order.orderStatus === "confirmed" &&
+                              "banned-click "
+                            }`}>
+                            <TbWriting />
+                          </button>
+                        </td>
+                      </tr>
+                    );
                   })}
                 </tbody>
               </table>

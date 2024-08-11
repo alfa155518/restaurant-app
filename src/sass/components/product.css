@@ -52,12 +52,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 30px;
+  margin: 22px;
 }
-.product-component .actions li {
+.product-component .actions span {
   color: rgb(255, 255, 255);
 }
-.product-component .actions li a {
+.product-component .actions span a {
   color: rgb(255, 255, 255);
 }
 .product-component .actions .cart {
@@ -83,23 +83,4 @@
 }
 .product-component .actions .cart:hover a {
   color: rgba(0, 0, 0, 0.9215686275);
-}
-.product-component .actions .eye {
-  background-color: #4b4545;
-  padding: 5px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  line-height: 0;
-  font-size: 20px;
-  transition: 0.5s ease-in-out;
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -ms-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-}
-.product-component .actions .eye:hover {
-  background-color: rgb(230, 0, 0);
 }

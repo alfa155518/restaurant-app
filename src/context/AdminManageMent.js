@@ -5,6 +5,7 @@ function AdminManageMent({ children }) {
   const [showSideBar, setShowSideBar] = useState(false);
   const [admin, setAdmin] = useState("");
   const [menuProducts, setMenuProducts] = useState([]);
+  const [reservations, setReservations] = useState([]);
   const adminInfo = JSON.parse(localStorage.getItem("newUser"));
   const adminPhoto = adminInfo?.photo?.url || admin_Image;
   return (
@@ -17,6 +18,8 @@ function AdminManageMent({ children }) {
         menuProducts,
         setMenuProducts,
         adminPhoto,
+        reservations,
+        setReservations,
       }}>
       {children}
     </contextAdmin.Provider>

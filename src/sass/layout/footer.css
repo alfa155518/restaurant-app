@@ -1,9 +1,10 @@
 footer {
   padding: 100px 10px;
-  margin: 60px 10px;
+  margin: 300px 10px;
   background-image: url("../../images//static-img.WebP");
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 0;
 }
 footer .subscription {
   display: flex;

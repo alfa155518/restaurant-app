@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { contextProduct } from "../context/HandelCart";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
@@ -7,49 +7,19 @@ import WrapperNav from "../components/wrapperNav";
 import Footer from "../layout/footer";
 import ScrollToTop from "../components/scrollToTop";
 import EmptyData from "../components/emptyData";
-import "../sass/pages/cart.css";
-import axios from "axios";
 import Loader from "../components/loader";
-import useNotifiCations from "../hooks/useNotifiCations";
+import "../sass/pages/cart.css";
 
 function Cart() {
   let {
     productInCart,
-    setProductInCart,
     handelPlusProductNumber,
     handelMinusProductNumber,
     handelDeleteProduct,
     totalPrice,
+    loading,
+    handelByProducts,
   } = useContext(contextProduct);
-  const [loading, setLoading] = useState(false);
-  const [notify] = useNotifiCations("success", "Done ");
-  // Post all product in cart to db
-  const handelByProducts = async (e) => {
-    e.preventDefault();
-    try {
-      setLoading(true);
-      const response = await axios.post(
-        "http://localhost:8000/api/v1/orders/addOrder",
-        { order: productInCart },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const data = await response.data;
-      if (data.status === "success") {
-        localStorage.removeItem("productInCart");
-        notify();
-        return setProductInCart([]);
-      }
-      console.log(data);
-    } catch (error) {
-      console.error("Error adding products to cart:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <>
@@ -123,6 +93,13 @@ function Cart() {
                           <td className="total">{`$${(
                             +product.price.replace(/\$/g, "") * product.quantity
                           ).toFixed(3)}`}</td>
+                          <td className="checkout">
+                            <button
+                              className="send-data"
+                              onClick={(e) => handelByProducts(e, product)}>
+                              Checkout
+                            </button>
+                          </td>
                         </tr>
                       );
                     })}
@@ -132,11 +109,6 @@ function Cart() {
                   Total Price:
                   <span>{`$${totalPrice.toFixed(3)}`}</span>
                 </div>
-                <button
-                  className="send-data  roboto-black"
-                  onClick={(e) => handelByProducts(e)}>
-                  By Now
-                </button>
               </>
             ) : (
               <EmptyData page={"Menu"} link={"/menu"} />

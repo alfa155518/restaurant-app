@@ -38,7 +38,6 @@ function useUpdatePhoto(setLoading, token) {
       .catch((error) => {
         if (error) {
           notifyError();
-          console.log(error);
         }
       })
       .finally(() => {

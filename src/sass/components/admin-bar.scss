@@ -1,9 +1,7 @@
-
 @use "../helpers/mixins" as *;
 @use "../helpers/variables" as *;
 
 .admin-bar {
-
   ul {
     display: flex;
     align-items: center;
@@ -24,31 +22,31 @@
 
       &.actions {
         .notifications {
-          font-size: 25px;
+          font-size: 35px;
           color: $wordsColor;
           cursor: pointer;
           position: relative;
-
-          &::before {
-            content: "1";
+          .notify-number {
             position: absolute;
             top: 0;
             right: 0;
             background-color: #ffcc00;
             color: $mainColor;
             font-size: 15px;
-            width: 11px;
-            height: 12px;
+            width: 15px;
+            height: 15px;
             text-align: center;
             font-weight: 900;
             @include radios(50%);
-            padding: 1px;
+            padding: 2px;
           }
         }
 
         .admin-image {
           img {
+            width: 57px;
             height: 50px;
+            object-fit: cover;
             @include radios(50%);
             margin: 10px;
           }
@@ -56,7 +54,7 @@
       }
     }
 
-    @media (max-width:773px) {
+    @media (max-width: 773px) {
       .bars-icon {
         display: block !important;
       }

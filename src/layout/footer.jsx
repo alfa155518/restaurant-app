@@ -32,28 +32,28 @@ function Footer() {
         <div className="footer-content">
           <ul className="links">
             <li>
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </span>
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
             </li>
-              <li>
-            <p className="roboto-bold-italic">
-              Book A Table
-              <br />
-              <span>+201555187474</span>
-            </p>
-              </li>
-              <li>
-            <p className="roboto-bold-italic">
-              Opening Hours
-              <br />
-              <span>08:00AM - 12:00PM</span>
-            </p>
-              </li>
+            <li>
+              <p className="roboto-bold-italic">
+                Book A Table
+                <br />
+                <span>+201555187474</span>
+              </p>
+            </li>
+            <li>
+              <p className="roboto-bold-italic">
+                Opening Hours
+                <br />
+                <span>08:00AM - 12:00PM</span>
+              </p>
+            </li>
           </ul>
           <ul className="links">
             <li>
-            <h3 className="title-link roboto-black ">Quick Links</h3>
+              <h3 className="title-link roboto-black ">Quick Links</h3>
             </li>
             <li>
               <Link to={"/about-us"}>About Us</Link>
@@ -70,7 +70,7 @@ function Footer() {
           </ul>
           <ul className="links get-touch">
             <li>
-            <h4 className="title-link roboto-black ">Get in Touch</h4>
+              <h4 className="title-link roboto-black ">Get in Touch</h4>
             </li>
             <li>
               <ImLocation2 className="icon" />
@@ -82,7 +82,7 @@ function Footer() {
             </li>
             <li>
               <MdEmail className="icon" />
-              <strong>alfa@gmail.com</strong>
+              <strong>alfaelkanas@gmail.com</strong>
             </li>
           </ul>
         </div>

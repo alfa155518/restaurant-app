@@ -41,13 +41,10 @@ function useAddEmployee() {
       );
 
       if (response.status === 201) {
-        const data = await response.data.employee;
-        console.log(data);
         notify("success", "Employee added successfully!");
         navigate(-1);
       }
     } catch (error) {
-      console.log(error);
       if (error.response.data) {
         notify("error", error.response.data.message);
       }

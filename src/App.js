@@ -28,91 +28,110 @@ import AddProduct from "./pages/addProduct";
 import UpdateUser from "./pages/updateUser";
 import UpdateProduct from "./pages/updateProduct";
 import UpdateEmployee from "./pages/updateEmployee";
+import AddEmployee from "./pages/addEmployee";
+import OrderContextManagement from "./context/orderManagement";
+import AllUserNotifications from "./pages/allUserNotifications";
+import PaymentSuccess from "./pages/paymentSuccess";
+import PaymentFailed from "./pages/paymentFailed";
 import "react-toastify/dist/ReactToastify.css";
 import "./sass/components/side-bar-admin.css";
-import AddEmployee from "./pages/addEmployee";
 
 function App() {
   const [admin, setAdmin] = useState("");
+  // localStorage.setItem("role", "user");
   if (admin) {
     localStorage.setItem("role", admin?.existingUser?.role);
   }
   return (
     <AdminManageMent>
-      <>
-        {localStorage.getItem("role") === "admin" ? (
-          <div className="main">
-            <Routes>
-              <Route element={<DashboardContainer />}>
-                <Route index element={<UserManagement />} />
-                <Route path="updateUser/:userId" element={<UpdateUser />} />
-                <Route path="menu-management" element={<MenuManagement />} />
-                <Route
-                  path="updateProduct/:productId"
-                  element={<UpdateProduct />}
-                />
-                <Route path="add-product" element={<AddProduct />} />
-                <Route path="order-management" element={<OrderManagement />} />
-                <Route
-                  path="reservation-management"
-                  element={<ReservationManagement />}
-                />
-                <Route
-                  path="employees-management"
-                  element={<EmployeesManagement />}
-                />
-                <Route
-                  path="employees-management/updateEmployee/:employeeId"
-                  element={<UpdateEmployee />}
-                />
-                <Route path="add-employee" element={<AddEmployee />} />
-              </Route>
-            </Routes>
-          </div>
-        ) : (
-          <HandelProducts>
-            <ManageTable>
-              <HandelCart>
-                <div className="main">
-                  <Routes>
-                    <Route path="signup" element={<SingUp />} />
-                    <Route
-                      path="login"
-                      element={<Login admin={admin} setAdmin={setAdmin} />}
-                    />
-                    <Route path="/" element={<Home />} />
-                    <Route path="profile" element={<Profile />} />
-                    <Route path="menu" element={<Menu />} />
-                    <Route path="profile" element={<Profile />} />
-                    <Route path="menu" element={<Menu />} />
-                    <Route path="cart" element={<Cart />} />
-                    <Route path="tables" element={<Tables />} />
-                    <Route path="tables/:infoId" element={<TableInfo />} />
-                    <Route path="my-bookings" element={<MyBookings />} />
-                    <Route path="about-us" element={<AboutUs />} />
-                    <Route path="contact-us" element={<ContactUs />} />
-                    <Route path="services" element={<Services />} />
-                    <Route path="favorite" element={<Favorite />} />
-                  </Routes>
-                </div>
-              </HandelCart>
-            </ManageTable>
-          </HandelProducts>
-        )}
-        <ToastContainer
-          position="top-center"
-          autoClose={2000}
-          limit={1}
-          hideProgressBar={false}
-          newestOnTop
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
-      </>
+      <OrderContextManagement>
+        <>
+          {localStorage.getItem("role") === "admin" ? (
+            <div className="main">
+              <Routes>
+                <Route element={<DashboardContainer />}>
+                  <Route index element={<UserManagement />} />
+                  <Route path="updateUser/:userId" element={<UpdateUser />} />
+                  <Route path="menu-management" element={<MenuManagement />} />
+                  <Route
+                    path="updateProduct/:productId"
+                    element={<UpdateProduct />}
+                  />
+                  <Route path="add-product" element={<AddProduct />} />
+                  <Route
+                    path="order-management"
+                    element={<OrderManagement />}
+                  />
+                  <Route
+                    path="reservation-management"
+                    element={<ReservationManagement />}
+                  />
+                  <Route
+                    path="employees-management"
+                    element={<EmployeesManagement />}
+                  />
+                  <Route
+                    path="employees-management/updateEmployee/:employeeId"
+                    element={<UpdateEmployee />}
+                  />
+                  <Route path="add-employee" element={<AddEmployee />} />
+                  <Route
+                    path="all-notifications"
+                    element={<AllUserNotifications />}
+                  />
+                </Route>
+              </Routes>
+            </div>
+          ) : (
+            <HandelProducts>
+              <ManageTable>
+                <HandelCart>
+                  <div className="main">
+                    <Routes>
+                      <Route path="signup" element={<SingUp />} />
+                      <Route
+                        path="login"
+                        element={<Login admin={admin} setAdmin={setAdmin} />}
+                      />
+                      <Route path="/" element={<Home />} />
+                      <Route path="profile" element={<Profile />} />
+                      <Route path="menu" element={<Menu />} />
+                      <Route path="profile" element={<Profile />} />
+                      <Route path="menu" element={<Menu />} />
+                      <Route path="cart" element={<Cart />} />
+                      <Route path="tables" element={<Tables />} />
+                      <Route path="tables/:infoId" element={<TableInfo />} />
+                      <Route path="my-bookings" element={<MyBookings />} />
+                      <Route path="about-us" element={<AboutUs />} />
+                      <Route path="contact-us" element={<ContactUs />} />
+                      <Route path="services" element={<Services />} />
+                      <Route path="favorite" element={<Favorite />} />
+                      <Route
+                        path="paymentSuccess"
+                        element={<PaymentSuccess />}
+                      />
+                      <Route path="paymentFailed" element={<PaymentFailed />} />
+                    </Routes>
+                  </div>
+                </HandelCart>
+              </ManageTable>
+            </HandelProducts>
+          )}
+          <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            limit={1}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
+        </>
+      </OrderContextManagement>
     </AdminManageMent>
   );
 }

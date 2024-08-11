@@ -24,7 +24,6 @@ function useTables(
     setBookingTables((preTable) => {
       // Check if Table is already Exit
       let exit = bookingTables.find((finedTable) => {
-        console.log(finedTable._id, table._id);
         return finedTable._id === table._id;
       });
 
@@ -46,7 +45,7 @@ function useTables(
         (bookingTable) => bookingTable._id !== table._id
       );
     });
-    changeStatus(table, false);
+
     notifySuccessCanceled();
   }
   return [bookingTable, handelCancelBookingTable];

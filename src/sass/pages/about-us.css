@@ -15,8 +15,8 @@
 .wrapper-about-us .advantages .advantage .icon {
   background: linear-gradient(rgb(230, 0, 0), rgb(255, 204, 0));
   color: rgb(255, 255, 255);
-  padding: 15px;
-  font-size: 30px;
+  padding: 7px;
+  font-size: 50px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -55,6 +55,7 @@
 .wrapper-about-us .award-chef .info .text {
   color: #ccc;
   line-height: 1.8;
+  margin-bottom: 25px;
 }
 .wrapper-about-us .deliver-quality .info a,
 .wrapper-about-us .award-chef .info a {

@@ -11,8 +11,6 @@ function useAddProduct() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  console.log(name, description, price, image, category);
-
   const notify = (status, message) =>
     toast(message, {
       transition: Zoom,
@@ -39,7 +37,6 @@ function useAddProduct() {
           },
         }
       );
-      console.log(response.data);
       if (response.status === 201) {
         notify("success", "Product added successfully");
         navigate(-1);

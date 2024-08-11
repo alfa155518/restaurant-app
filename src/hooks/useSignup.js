@@ -45,7 +45,6 @@ function useSignup() {
       .then((data) => {
         localStorage.setItem("newUser", JSON.stringify(data.data.newUser));
         localStorage.setItem("uToken", data.data.token);
-        console.log(data.data);
         // check if data is successfully
         if (data.data.status === "signup successful") {
           notify("success", data.data.status);
@@ -55,7 +54,7 @@ function useSignup() {
         }
       })
       .catch((err) => {
-        if (err.response.data) {
+        if (err?.response?.data) {
           notify("error", err.response.data.message);
         }
         if (err.response.data.message?.[0].startsWith("P")) {

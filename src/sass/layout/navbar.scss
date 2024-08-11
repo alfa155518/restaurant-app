@@ -145,7 +145,7 @@
         background-color: rgb(34, 34, 34);
         height: 1000vh;
         width: 44%;
-        left: 100%;
+        left: 150%;
         top: 0;
         display: flex;
         right: 39px;
@@ -159,7 +159,7 @@
         .links {
           flex-direction: column;
           background-color: #00000042;
-          width: 87%;
+          width: 100%;
           align-items: flex-start;
           li {
             padding: 20px 0;
@@ -167,7 +167,6 @@
             border-bottom: 1px solid #{$mainColor};
             width: 95%;
             position: relative;
-            right: 30px;
             &::after {
               display: none;
             }
@@ -183,7 +182,7 @@
     .container-links {
       width: 55% !important;
       .links {
-        width: 85% !important;
+        width: 100% !important;
       }
     }
     .appear {

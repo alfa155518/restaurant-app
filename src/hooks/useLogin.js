@@ -36,7 +36,6 @@ function useLogin({ setAdmin }) {
       .then((data) => {
         localStorage.setItem("uToken", data.data.newToken);
         localStorage.setItem("newUser", JSON.stringify(data.data.existingUser));
-        console.log(data.data);
         // check if data is successfully
         if (data.data.status === "login successful") {
           notify("success", data.data.status);
@@ -47,7 +46,6 @@ function useLogin({ setAdmin }) {
         return setAdmin(data.data);
       })
       .catch((err) => {
-        console.log(err?.response?.data);
         notify("error", err?.response?.data?.message);
       })
       .finally(() => {

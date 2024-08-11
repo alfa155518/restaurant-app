@@ -1,0 +1,31 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+.notifications-container {
+  table {
+    @include centerTable($wordsColor);
+    @include thead($wordsColor);
+    tbody {
+      tr {
+        background-color: $tableMainColor;
+        td {
+          @include tableTd;
+          img {
+            width: 50px;
+            height: 40px;
+            object-fit: cover;
+            @include radios(50%);
+          }
+          &.first-name,
+          &.email,
+          &.message-date {
+            color: $btnAndTextColor;
+          }
+          &.phone {
+            color: $wordsColor;
+          }
+          @include tableActions($btnAndTextColor, $mainColor, $wordsColor);
+        }
+      }
+    }
+  }
+}
