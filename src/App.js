@@ -38,7 +38,7 @@ import "./sass/components/side-bar-admin.css";
 
 function App() {
   const [admin, setAdmin] = useState("");
-  localStorage.setItem("role", "user");
+  // localStorage.setItem("role", "user");
   if (admin) {
     localStorage.setItem("role", admin?.existingUser?.role);
   }
@@ -107,10 +107,13 @@ function App() {
                       <Route path="services" element={<Services />} />
                       <Route path="favorite" element={<Favorite />} />
                       <Route
-                        path="paymentSuccess"
+                        path="/paymentSuccess"
                         element={<PaymentSuccess />}
                       />
-                      <Route path="paymentFailed" element={<PaymentFailed />} />
+                      <Route
+                        path="/paymentFailed"
+                        element={<PaymentFailed />}
+                      />
                     </Routes>
                   </div>
                 </HandelCart>
