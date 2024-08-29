@@ -15,7 +15,9 @@ function Table() {
   // Get ALl Tables
   const getAllTables = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/v1/tables");
+      const response = await axios.get(
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/tables"
+      );
       const data = await response.data.tables;
       setAllTables(data);
     } catch (err) {

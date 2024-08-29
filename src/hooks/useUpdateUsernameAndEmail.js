@@ -28,12 +28,16 @@ function useUpdateUsernameAndEmail(user, token, setLoading) {
     e.preventDefault();
     setLoading(true);
     await axios
-      .patch("http://localhost:8000/api/v1/users/updateUser", updatedData, {
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-      })
+      .patch(
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/users/updateUser",
+        updatedData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         if (res.data.status === "success") {
           localStorage.setItem("newUser", JSON.stringify(res.data.updatedUser));

@@ -23,12 +23,16 @@ function useUpdatePhoto(setLoading, token) {
     const formData = makeFormData();
     setLoading(true);
     await axios
-      .patch(`http://localhost:8000/api/v1/users/updateUserPhoto`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          authorization: `Bearer ${token}`,
-        },
-      })
+      .patch(
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/users/updateUserPhoto`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         if (res.data.status === "success") {
           localStorage.setItem("newUser", JSON.stringify(res.data.updatedUser));

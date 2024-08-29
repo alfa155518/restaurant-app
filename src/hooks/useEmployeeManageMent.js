@@ -17,7 +17,7 @@ function useEmployeeManageMent() {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:8000/api/v1/employees/",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/employees/",
         {
           headers: {
             "Content-Type": "application/json",
@@ -44,7 +44,7 @@ function useEmployeeManageMent() {
       e.preventDefault();
       setLoading(true);
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/employees/employee/${employee._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/employees/employee/${employee._id}`,
         {
           headers: {
             "Content-Type": "application/json",

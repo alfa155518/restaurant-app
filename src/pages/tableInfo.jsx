@@ -34,7 +34,7 @@ function TableInfo() {
   const getSingleData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/v1/tables/${infoId}`
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/tables/${infoId}`
       );
       const data = await response.data.table;
       await setTable(data);

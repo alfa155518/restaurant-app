@@ -21,7 +21,7 @@ function useMenuProducts() {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:8000/api/v1/allProducts"
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/allProducts"
       );
       const data = await response.data.products;
       return setMenuProducts(data);
@@ -43,7 +43,7 @@ function useMenuProducts() {
     try {
       setLoading(true);
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/allProducts/${product._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/allProducts/${product._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("uToken")}`,

@@ -38,7 +38,7 @@ import "./sass/components/side-bar-admin.css";
 
 function App() {
   const [admin, setAdmin] = useState("");
-  // localStorage.setItem("role", "user");
+  localStorage.setItem("role", "user");
   if (admin) {
     localStorage.setItem("role", admin?.existingUser?.role);
   }

@@ -20,7 +20,7 @@ function useLogin({ setAdmin }) {
     setLoading(true);
     await axios
       .post(
-        "http://localhost:8000/api/v1/users/login",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/users/login",
         {
           email,
           password,

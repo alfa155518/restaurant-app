@@ -26,7 +26,7 @@ function useUpdateUser() {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:8000/api/v1/admin/users/user/${userId}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/admin/users/user/${userId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -69,7 +69,7 @@ function useUpdateUser() {
     try {
       setLoading(true);
       const response = await axios.patch(
-        `http://localhost:8000/api/v1/admin/users/update/${userId}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/admin/users/update/${userId}`,
         updatedData,
         {
           headers: {

@@ -22,7 +22,7 @@ function useAddProduct() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:8000/api/v1/allProducts/addProduct",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/allProducts/addProduct",
         {
           name,
           description,

@@ -15,12 +15,15 @@ const useLogOut = (setLoading) => {
     e.preventDefault();
     setLoading(true);
     await axios
-      .delete("http://localhost:8000/api/v1/users/logout", {
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("uToken")}`,
-        },
-      })
+      .delete(
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/users/logout",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("uToken")}`,
+          },
+        }
+      )
       .then((res) => {
         if (res.data.status === "logout successful") {
           notify("success", res.data.status);

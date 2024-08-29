@@ -24,7 +24,7 @@ function useUpdateProduct() {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:8000/api/v1/allProducts/${productId}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/allProducts/${productId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +63,7 @@ function useUpdateProduct() {
     try {
       setLoading(true);
       const response = await axios.patch(
-        `http://localhost:8000/api/v1/allProducts/updateProduct/${productId}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/allProducts/updateProduct/${productId}`,
         updatedData,
         {
           headers: {

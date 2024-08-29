@@ -21,7 +21,7 @@ function useUserReservationManagement() {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:8000/api/v1/reservation/",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/reservation/",
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("uToken")}`,
@@ -52,7 +52,7 @@ function useUserReservationManagement() {
     try {
       setLoading(true);
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/reservation/${reserve._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/reservation/${reserve._id}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("uToken")}`,
@@ -78,7 +78,7 @@ function useUserReservationManagement() {
   // 5) Change State Of Table
   const changeStatus = async (targetTable, value) => {
     await axios.patch(
-      `http://localhost:8000/api/v1/tables/${targetTable.table._id}`,
+      `https://backend-restaurant-app-production.up.railway.app/api/v1/tables/${targetTable.table._id}`,
       {
         status: value,
       }
@@ -91,7 +91,7 @@ function useUserReservationManagement() {
     try {
       setLoading(true);
       const response = await axios.patch(
-        `http://localhost:8000/api/v1/reservation/${reserve._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/reservation/${reserve._id}`,
         {
           status: "confirmed",
         },

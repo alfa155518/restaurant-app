@@ -30,7 +30,7 @@ function useUpdatePassword(setLoading, token) {
     setLoading(true);
     await axios
       .patch(
-        "http://localhost:8000/api/v1/users/updatePassword",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/users/updatePassword",
         passwordData,
         {
           headers: {

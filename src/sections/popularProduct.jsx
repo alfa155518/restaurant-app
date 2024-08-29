@@ -15,7 +15,7 @@ function PopularProduct() {
     try {
       await setPopularProducts("");
       const response = await axios.get(
-        "http://localhost:8000/api/v1/popularProducts"
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/popularProducts"
       );
       const data = await response?.data?.popularProducts;
       return setPopularProducts(data);

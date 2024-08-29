@@ -60,7 +60,7 @@ function HandelCart({ children }) {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:8000/api/v1/orders/addOrder",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/orders/addOrder",
         { quantity: product.quantity, productId: product._id },
         {
           headers: {

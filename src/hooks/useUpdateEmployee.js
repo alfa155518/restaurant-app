@@ -23,7 +23,7 @@ function useUpdateEmployee() {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:8000/api/v1/employees/employee/${employeeId}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/employees/employee/${employeeId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +63,7 @@ function useUpdateEmployee() {
       e.preventDefault();
       setLoading(true);
       const response = await axios.patch(
-        `http://localhost:8000/api/v1/employees/employee/${employeeId}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/employees/employee/${employeeId}`,
         data,
         {
           headers: {

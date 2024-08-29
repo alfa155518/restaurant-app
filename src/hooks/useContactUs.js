@@ -24,7 +24,7 @@ function useContactUs() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:8000/api/v1/contact",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/contact",
         {
           firstName,
           lastName,
@@ -60,12 +60,15 @@ function useContactUs() {
   const getUsersNotifications = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:8000/api/v1/contact", {
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("uToken")}`,
-        },
-      });
+      const response = await axios.get(
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/contact",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("uToken")}`,
+          },
+        }
+      );
       if (response.status === 200) {
         const data = await response.data;
         return setNotifications(() => {
@@ -90,7 +93,7 @@ function useContactUs() {
     try {
       setLoading(true);
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/contact/${message._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/contact/${message._id}`,
         {
           headers: {
             "Content-Type": "application/json",

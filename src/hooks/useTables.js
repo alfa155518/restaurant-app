@@ -15,7 +15,7 @@ function useTables(
 
   // Change State Of Table
   const changeStatus = async (table, value) => {
-    await axios.patch(`http://localhost:8000/api/v1/tables/${table._id}`, {
+    await axios.patch(`https://backend-restaurant-app-production.up.railway.app/api/v1/tables/${table._id}`, {
       status: value,
     });
   };

@@ -36,11 +36,15 @@ function useSignup() {
 
     // Create a function to handle submit
     await axios
-      .post("http://localhost:8000/api/v1/users/signup", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      .post(
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/users/signup",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      )
       .then((res) => res)
       .then((data) => {
         localStorage.setItem("newUser", JSON.stringify(data.data.newUser));

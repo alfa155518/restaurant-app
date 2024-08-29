@@ -16,7 +16,7 @@ function Menu() {
   // Get All Products
   const getAllProducts = async () => {
     const response = await axios.get(
-      "http://localhost:8000/api/v1/allProducts/"
+      "https://backend-restaurant-app-production.up.railway.app/api/v1/allProducts/"
     );
     const data = await response.data;
     await setAllProducts(() => {
@@ -27,7 +27,7 @@ function Menu() {
   // Get Products and show them
   const getProducts = async () => {
     const response = await axios.get(
-      "http://localhost:8000/api/v1/allProducts/"
+      "https://backend-restaurant-app-production.up.railway.app/api/v1/allProducts/"
     );
     const data = await response.data;
     await setProducts(() => {

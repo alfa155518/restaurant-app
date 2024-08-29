@@ -16,7 +16,7 @@ function usePayAndBooking(handelCancelBookingTable) {
     try {
       setLoading(true);
       const response = await axios.post(
-        `http://localhost:8000/api/v1/reservation/${table._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/reservation/${table._id}`,
         {},
         {
           headers: {

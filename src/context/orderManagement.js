@@ -17,7 +17,7 @@ function OrderContextManagement({ children }) {
   const getAllOrderProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:8000/api/v1/orders/", {
+      const response = await axios.get("https://backend-restaurant-app-production.up.railway.app/api/v1/orders/", {
         headers: {
           authorization: "Bearer " + localStorage.getItem("uToken"),
         },
@@ -39,7 +39,7 @@ function OrderContextManagement({ children }) {
     try {
       setLoading(true);
       const response = await axios.patch(
-        `http://localhost:8000/api/v1/orders/${order._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/orders/${order._id}`,
         {
           orderStatus: "confirmed",
         },
@@ -67,7 +67,7 @@ function OrderContextManagement({ children }) {
     try {
       setLoading(true);
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/orders/${order._id}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/orders/${order._id}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem("uToken")}`,

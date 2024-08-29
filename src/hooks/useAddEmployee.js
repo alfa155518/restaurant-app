@@ -30,7 +30,7 @@ function useAddEmployee() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:8000/api/v1/employees/addEmployee",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/employees/addEmployee",
         formData,
         {
           headers: {

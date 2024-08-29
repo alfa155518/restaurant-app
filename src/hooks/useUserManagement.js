@@ -18,7 +18,7 @@ function useUserManageMent() {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:8000/api/v1/admin/users",
+        "https://backend-restaurant-app-production.up.railway.app/api/v1/admin/users",
         {
           headers: {
             "Content-Type": "application/json",
@@ -44,12 +44,12 @@ function useUserManageMent() {
   const handelDeleteUser = async (e, user) => {
     e.preventDefault();
     try {
-      setLoading(true)
+      setLoading(true);
       // 6) Get user  id
       const userId = user._id;
       // 7) Send DELETE request to server
       await axios.delete(
-        `http://localhost:8000/api/v1/admin/users/delete/${userId}`,
+        `https://backend-restaurant-app-production.up.railway.app/api/v1/admin/users/delete/${userId}`,
         {
           headers: {
             "Content-Type": "application/json",
