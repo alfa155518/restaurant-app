@@ -33,6 +33,7 @@ import OrderContextManagement from "./context/orderManagement";
 import AllUserNotifications from "./pages/allUserNotifications";
 import PaymentSuccess from "./pages/paymentSuccess";
 import PaymentFailed from "./pages/paymentFailed";
+import ErrorPage from "./pages/error";
 import "react-toastify/dist/ReactToastify.css";
 import "./sass/components/side-bar-admin.css";
 
@@ -80,6 +81,7 @@ function App() {
                     element={<AllUserNotifications />}
                   />
                 </Route>
+                <Route path="*" element={<ErrorPage />} />
               </Routes>
             </div>
           ) : (
@@ -114,6 +116,7 @@ function App() {
                         path="/paymentFailed"
                         element={<PaymentFailed />}
                       />
+                      <Route path="*" element={<ErrorPage />} />
                     </Routes>
                   </div>
                 </HandelCart>
