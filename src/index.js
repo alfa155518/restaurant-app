@@ -11,7 +11,7 @@ import "./sass/utils/normalize.css";
 import "./sass/main.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Router basename="restaurant-app">
+  <Router basename="/restaurant-app">
     <App />
   </Router>
 );

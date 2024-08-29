@@ -93,7 +93,7 @@ function App() {
                         path="login"
                         element={<Login admin={admin} setAdmin={setAdmin} />}
                       />
-                      <Route path="/" element={<Home />} />
+                      <Route index element={<Home />} />
                       <Route path="profile" element={<Profile />} />
                       <Route path="menu" element={<Menu />} />
                       <Route path="profile" element={<Profile />} />
